@@ -26,6 +26,13 @@ if (!css || !js) {
 
 mkdirSync(outputDir, { recursive: true });
 
+const bootstrapData = `<script>window.$_TSR = window.$_TSR || {
+  initialized: false,
+  buffer: [],
+  h: () => {},
+  router: { matches: [], manifest: { routes: {} }, dehydratedData: null }
+};</script>`;
+
 const html = `<!doctype html>
 <html lang="en">
   <head>
@@ -36,6 +43,7 @@ const html = `<!doctype html>
   </head>
   <body>
     <div id="root"></div>
+    ${bootstrapData}
     <script type="module" src="/client/assets/${js}"></script>
   </body>
 </html>
