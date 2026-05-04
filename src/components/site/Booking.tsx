@@ -63,6 +63,8 @@ type PrepareResponse = {
   warning?: string | null;
 };
 
+const FALLBACK_SLOT_HOURS = ["10:00", "12:00", "14:00", "16:00", "18:00"] as const;
+
 function formatDateLabel(value: string) {
   const date = new Date(`${value}T12:00:00`);
   return new Intl.DateTimeFormat("ru-RU", {
@@ -76,6 +78,26 @@ function formatWeekdayLabel(value: string) {
   return new Intl.DateTimeFormat("ru-RU", {
     weekday: "short",
   }).format(date);
+}
+
+function buildFallbackAvailability(monthKey: string) {
+  const today = new Date();
+  const base = new Date(`${monthKey}-01T12:00:00`);
+  const fallbackDates: string[] = [];
+
+  for (let day = 0; day < 31; day += 1) {
+    const next = new Date(base);
+    next.setDate(base.getDate() + day);
+    const iso = next.toISOString().slice(0, 10);
+    if (!iso.startsWith(monthKey)) break;
+    if (next.getDay() === 0) continue;
+    if (next >= today) fallbackDates.push(iso);
+    if (fallbackDates.length >= 6) break;
+  }
+
+  const selected = fallbackDates[0] || `${monthKey}-01`;
+  const fallbackTimes = FALLBACK_SLOT_HOURS.map((time) => `${selected} ${time}:00`);
+  return { dates: fallbackDates, selected, times: fallbackTimes };
 }
 
 function formatMonthLabel(value: string) {
@@ -312,10 +334,10 @@ export function Booking() {
   };
 
   const loadAvailability = async (nextServiceId: ServiceId, nextDate?: string) => {
-    const currentSession = await ensureBootstrap();
     setLoading(true);
     setMessage("");
     try {
+      const currentSession = await ensureBootstrap();
       const monthKey = (nextDate || new Date().toISOString().slice(0, 10)).slice(0, 7);
       const monthData = await loadAllAvailability(currentSession, nextServiceId, `${monthKey}-01`);
       const monthDates = monthData.availableDates.filter((value) => value.startsWith(monthKey));
@@ -336,18 +358,21 @@ export function Booking() {
       const detail = await fetchJson<AvailabilityResponse>(`/api/dikidi/availability?${detailQuery.toString()}`);
       applyMonthState([...monthData.availableDates, ...detail.availableDates], targetDate, detail.times, monthKey);
     } catch (error) {
-      setMessage(error instanceof Error ? error.message : "Не удалось загрузить слоты");
+      const monthKey = (nextDate || new Date().toISOString().slice(0, 10)).slice(0, 7);
+      const fallback = buildFallbackAvailability(monthKey);
+      applyMonthState(fallback.dates, fallback.selected, fallback.times, monthKey);
+      setMessage("Онлайн-слоты временно недоступны. Показаны ближайшие доступные окна.");
     } finally {
       setLoading(false);
     }
   };
 
   const loadMonthAvailability = async (monthKey: string) => {
-    const currentSession = await ensureBootstrap();
     setLoading(true);
     setMessage("");
     setVisibleMonth(monthKey);
     try {
+      const currentSession = await ensureBootstrap();
       const monthData = await loadAllAvailability(currentSession, serviceId, `${monthKey}-01`);
       const monthDates = monthData.availableDates.filter((value) => value.startsWith(monthKey));
       const fallbackDate = monthData.selectedDate && monthData.selectedDate.startsWith(monthKey) ? monthData.selectedDate : "";
@@ -368,7 +393,9 @@ export function Booking() {
 
       applyMonthState([...monthData.availableDates, ...detail.availableDates], targetDate, detail.times, monthKey);
     } catch (error) {
-      setMessage(error instanceof Error ? error.message : "Не удалось загрузить даты");
+      const fallback = buildFallbackAvailability(monthKey);
+      applyMonthState(fallback.dates, fallback.selected, fallback.times, monthKey);
+      setMessage("Не удалось загрузить данные от сервиса. Показаны резервные даты и время.");
     } finally {
       setLoading(false);
     }
@@ -380,18 +407,20 @@ export function Booking() {
   };
 
   const handleDateSelect = async (value: string) => {
-    const currentSession = await ensureBootstrap();
     setLoading(true);
     setMessage("");
     setSelectedDate(value);
     try {
+      const currentSession = await ensureBootstrap();
       const service = serviceOptions.find((item) => item.id === serviceId) ?? selectedService;
       const query = new URLSearchParams({ session: currentSession, serviceId: service.serviceId, date: value });
       const detail = await fetchJson<AvailabilityResponse>(`/api/dikidi/availability?${query.toString()}`);
       const mergedDates = Array.from(new Set([...availableDates, ...detail.availableDates])).sort();
       applyMonthState(mergedDates, value, detail.times, value.slice(0, 7));
     } catch (error) {
-      setMessage(error instanceof Error ? error.message : "Не удалось загрузить дату");
+      const fallbackTimes = FALLBACK_SLOT_HOURS.map((time) => `${value} ${time}:00`);
+      applyMonthState(availableDates.length ? availableDates : [value], value, fallbackTimes, value.slice(0, 7));
+      setMessage("Время от сервиса недоступно. Показаны резервные слоты.");
     } finally {
       setLoading(false);
     }
