@@ -1,7 +1,7 @@
 import { readFileSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
-const indexPath = join(process.cwd(), 'dist', 'spa-index.html');
-if (!existsSync(indexPath)) throw new Error('dist/spa-index.html missing');
+const indexPath = join(process.cwd(), 'dist', 'index.html');
+if (!existsSync(indexPath)) throw new Error('dist/index.html missing');
 const html = readFileSync(indexPath, 'utf8');
 if (html.includes('$_TSR')) throw new Error('window.$_TSR found');
 const js = html.match(/src="([^"]+\.js)"/)?.[1];

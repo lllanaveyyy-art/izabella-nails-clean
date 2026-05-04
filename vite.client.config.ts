@@ -8,7 +8,7 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     rollupOptions: {
-      input: 'spa-index.html',
+      input: 'index.html',
     },
   },
   server: { allowedHosts: true },
