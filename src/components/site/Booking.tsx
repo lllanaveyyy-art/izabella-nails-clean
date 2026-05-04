@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import { Send, CalendarCheck, Check, X, ChevronLeft, Loader2 } from "lucide-react";
+import { Send, CalendarCheck, Check, X, ChevronLeft, Loader2, MapPin } from "lucide-react";
 import { brand } from "@/data/brand";
 
 const serviceOptions = [
