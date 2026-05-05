@@ -678,7 +678,7 @@ export function Booking() {
                     </div>
                   </div>
 
-                  <div className="border-t border-[#eadfd6] bg-white/70 px-6 pb-14 pt-8 lg:border-l lg:border-t-0 lg:px-8 lg:pb-16 lg:pt-8">
+                  <div className="border-t border-[#efe4db] bg-white/70 px-6 pb-8 pt-8 rounded-b-[1.5rem] lg:border-l lg:border-t-0 lg:px-8 lg:pb-8 lg:pt-8">
                     <div className="grid gap-3">
                       <div className="rounded-[1.35rem] border border-[#efe4db] bg-white px-4 py-4 text-center">
                         <div className="text-[11px] uppercase tracking-[0.24em] text-muted-foreground">Дата</div>
