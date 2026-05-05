@@ -660,7 +660,7 @@ export function Booking() {
             {successMessage ? (
               <div className="mx-6 mt-6 md:mx-8">
                 <div className="grid overflow-hidden rounded-[1.75rem] border border-[#efe4db] bg-white pb-4 shadow-[0_24px_80px_rgba(42,23,15,0.12)] md:pb-5 lg:min-h-[360px] lg:grid-cols-[1.2fr_0.8fr]">
-                  <div className="bg-[linear-gradient(135deg,#fffdfb_0%,#fff6f2_48%,#fffdfb_100%)] px-6 py-8 md:px-8 md:py-9">
+                  <div className="h-full bg-[linear-gradient(135deg,#fffdfb_0%,#fff6f2_48%,#fffdfb_100%)] px-6 py-8 md:px-8 md:py-9">
                     <div className="inline-flex items-center rounded-full border border-primary/15 bg-white/80 px-3 py-1 text-[11px] font-medium uppercase tracking-[0.24em] text-primary">
                       Запись подтверждена
                     </div>
@@ -678,7 +678,7 @@ export function Booking() {
                     </div>
                   </div>
 
-                  <div className="border-t border-b border-[#efe4db] bg-white/70 px-6 pb-6 pt-8 rounded-b-[1.5rem] lg:border-l lg:border-t-0 lg:px-8 lg:pb-6 lg:pt-8">
+                  <div className="border-t border-[#efe4db] bg-white/70 px-6 pb-14 pt-8 rounded-b-[1.5rem] lg:border-l lg:border-t-0 lg:px-8 lg:pb-16 lg:pt-8">
                     <div className="grid gap-3">
                       <div className="rounded-[1.35rem] border border-[#efe4db] bg-white px-4 py-4 text-center">
                         <div className="text-[11px] uppercase tracking-[0.24em] text-muted-foreground">Дата</div>
