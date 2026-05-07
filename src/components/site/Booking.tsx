@@ -659,7 +659,7 @@ export function Booking() {
 
             {successMessage ? (
               <div className="mx-6 mt-6 md:mx-8">
-                <div className="grid overflow-hidden rounded-[1.75rem] border border-[#efe4db] bg-white pb-4 shadow-[0_24px_80px_rgba(42,23,15,0.12)] md:pb-5 lg:min-h-[360px] lg:grid-cols-[1.2fr_0.8fr]">
+                <div className="grid overflow-hidden rounded-[1.75rem] border border-[#efe4db] bg-white shadow-[0_24px_80px_rgba(42,23,15,0.12)] lg:min-h-[360px] lg:grid-cols-[1.2fr_0.8fr]">
                   <div className="h-full bg-[#fff6f2] px-6 py-8 md:px-8 md:py-9">
                     <div className="inline-flex items-center rounded-full border border-primary/15 bg-white/80 px-3 py-1 text-[11px] font-medium uppercase tracking-[0.24em] text-primary">
                       Запись подтверждена
