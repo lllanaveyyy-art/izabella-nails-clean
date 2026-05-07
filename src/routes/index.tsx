@@ -13,7 +13,7 @@ import { Footer } from "@/components/site/Footer";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Izabella Nails — Маникюр в Смоленске | ул. 25-Сентября, 16" },
+      { title: "Izabella Nails - Маникюр в Смоленске" },
       {
         name: "description",
         content:
