@@ -51,18 +51,18 @@ export function Portfolio() {
             <button
               type="button"
               onClick={() => move("prev")}
-              className="inline-flex h-7 w-7 items-center justify-center rounded-full border border-border bg-card text-foreground shadow-card"
+              className="inline-flex h-6 w-6 items-center justify-center rounded-full border border-border bg-card text-foreground shadow-card"
               aria-label="Прокрутить работы назад"
             >
-              <ChevronLeft className="h-3.5 w-3.5" />
+              <ChevronLeft className="h-3 w-3" />
             </button>
             <button
               type="button"
               onClick={() => move("next")}
-              className="inline-flex h-7 w-7 items-center justify-center rounded-full border border-border bg-card text-foreground shadow-card"
+              className="inline-flex h-6 w-6 items-center justify-center rounded-full border border-border bg-card text-foreground shadow-card"
               aria-label="Прокрутить работы вперёд"
             >
-              <ChevronRight className="h-3.5 w-3.5" />
+              <ChevronRight className="h-3 w-3" />
             </button>
           </div>
         </div>

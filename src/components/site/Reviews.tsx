@@ -25,7 +25,7 @@ export function Reviews() {
   return (
     <section id="reviews" className="bg-cream/40 py-6 md:py-16">
       <div className="mx-auto max-w-7xl px-2 md:px-6">
-        <div className="mb-4 flex items-end justify-between gap-3 md:mb-10 md:gap-6">
+        <div className="mb-3 flex items-end justify-between gap-3 md:mb-10 md:gap-6">
           <div className="max-w-xl">
             <span className="text-xs uppercase tracking-[0.25em] text-primary font-medium">Отзывы</span>
             <h2 className="mt-2 mb-3 font-display text-xl md:mt-3 md:mb-4 md:text-5xl">
@@ -39,7 +39,7 @@ export function Reviews() {
                 <div className="font-display text-2xl text-foreground md:text-3xl">{brand.rating.toFixed(1)}</div>
                 <div className="flex justify-center mt-1">
                   {Array.from({ length: 5 }).map((_, i) => (
-                    <Star key={i} className="h-3 w-3 fill-gold text-gold md:h-3.5 md:w-3.5" />
+                    <Star key={i} className="h-2.5 w-2.5 fill-gold text-gold md:h-3.5 md:w-3.5" />
                   ))}
                 </div>
               </div>
@@ -53,18 +53,18 @@ export function Reviews() {
               <button
                 type="button"
                 onClick={() => goToPage("prev")}
-                className="inline-flex h-7 w-7 items-center justify-center rounded-full border border-border bg-card text-foreground shadow-card"
+                className="inline-flex h-6 w-6 items-center justify-center rounded-full border border-border bg-card text-foreground shadow-card"
                 aria-label="Прокрутить отзывы назад"
               >
-                <ChevronLeft className="h-3.5 w-3.5" />
+                <ChevronLeft className="h-3 w-3" />
               </button>
               <button
                 type="button"
                 onClick={() => goToPage("next")}
-                className="inline-flex h-7 w-7 items-center justify-center rounded-full border border-border bg-card text-foreground shadow-card"
+                className="inline-flex h-6 w-6 items-center justify-center rounded-full border border-border bg-card text-foreground shadow-card"
                 aria-label="Прокрутить отзывы вперёд"
               >
-                <ChevronRight className="h-3.5 w-3.5" />
+                <ChevronRight className="h-3 w-3" />
               </button>
             </div>
           </div>
@@ -86,10 +86,10 @@ export function Reviews() {
               key={r.id}
               data-review-id={r.id}
               data-review-source={r.source}
-              className="group flex min-h-[122px] flex-col rounded-xl border border-border bg-card p-2.5 md:rounded-[1.5rem] md:p-4 shadow-card transition-all hover:-translate-y-1 hover:shadow-elegant md:min-h-[170px]"
+              className="group flex min-h-[112px] flex-col rounded-xl border border-border bg-card p-2 md:rounded-[1.5rem] md:p-4 shadow-card transition-all hover:-translate-y-1 hover:shadow-elegant md:min-h-[170px]"
             >
-              <div className="mb-1.5 flex items-center gap-1.5 md:mb-3 md:gap-3">
-                <div className="relative flex h-7 w-7 md:h-11 md:w-11 shrink-0 items-center justify-center overflow-hidden rounded-full bg-gradient-rose font-display text-sm text-primary md:text-base">
+              <div className="mb-1 flex items-center gap-1 md:mb-3 md:gap-3">
+                <div className="relative flex h-6 w-6 md:h-11 md:w-11 shrink-0 items-center justify-center overflow-hidden rounded-full bg-gradient-rose font-display text-sm text-primary md:text-base">
                   <span className="absolute inset-0 flex items-center justify-center">{r.initials}</span>
                   {r.avatar ? (
                     <img
@@ -108,13 +108,13 @@ export function Reviews() {
                 </div>
               </div>
 
-              <div className="mb-1.5 flex md:mb-2">
+              <div className="mb-1 flex md:mb-2">
                 {Array.from({ length: r.rating }).map((_, i) => (
-                  <Star key={i} className="h-3 w-3 fill-gold text-gold md:h-3.5 md:w-3.5" />
+                  <Star key={i} className="h-2.5 w-2.5 fill-gold text-gold md:h-3.5 md:w-3.5" />
                 ))}
               </div>
 
-              <p className="text-xs leading-relaxed text-foreground/85 md:text-sm">«{r.text}»</p>
+              <p className="text-[11px] leading-snug text-foreground/85 md:text-sm">«{r.text}»</p>
             </article>
           ))}
           </div>
