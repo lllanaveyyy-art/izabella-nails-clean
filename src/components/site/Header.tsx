@@ -4,12 +4,12 @@ import { brand } from "@/data/brand";
 export function Header() {
   return (
     <header className="sticky top-0 z-40 border-b border-border/60 bg-background/85 backdrop-blur-md">
-      <div className="mx-auto max-w-7xl px-6 py-4 flex items-center justify-between gap-4">
+      <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-3 md:px-6 md:py-4 lg:gap-4">
         <a href="#top" className="flex flex-col leading-tight">
-          <span className="font-display text-xl md:text-2xl tracking-tight text-foreground">
+          <span className="font-display text-lg tracking-tight text-foreground md:text-2xl">
             Izabella <span className="text-gradient-gold">Nails</span>
           </span>
-          <span className="text-[11px] uppercase tracking-[0.2em] text-muted-foreground">
+          <span className="text-[10px] uppercase tracking-[0.16em] text-muted-foreground md:text-[11px] md:tracking-[0.2em]">
             {brand.tagline}
           </span>
         </a>
@@ -35,7 +35,7 @@ export function Header() {
           </a>
           <a href={brand.bookingUrl}
              data-cta="header-booking"
-             className="inline-flex items-center rounded-full bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground shadow-soft hover:opacity-90 transition-opacity">
+             className="inline-flex items-center rounded-full bg-primary px-4 py-2 text-xs font-medium text-primary-foreground shadow-soft transition-opacity hover:opacity-90 md:px-5 md:py-2.5 md:text-sm">
             Записаться
           </a>
         </div>

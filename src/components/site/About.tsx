@@ -4,8 +4,8 @@ import { brand } from "@/data/brand";
 
 export function About() {
   return (
-    <section id="about" className="py-12 md:py-16 bg-background">
-      <div className="mx-auto max-w-7xl px-6 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+    <section id="about" className="bg-background py-8 md:py-16">
+      <div className="mx-auto grid max-w-7xl items-center gap-8 px-4 md:px-6 lg:grid-cols-2 lg:gap-16">
         <div className="relative">
           <div className="aspect-[4/5] rounded-[2rem] overflow-hidden shadow-elegant">
             <img src={aboutImg} alt="Изабелла - мастер маникюра в Смоленске"
@@ -21,10 +21,10 @@ export function About() {
 
         <div>
           <span className="text-xs uppercase tracking-[0.25em] text-primary font-medium">О мастере</span>
-          <h2 className="font-display text-3xl md:text-5xl mt-3 mb-6">
+          <h2 className="mt-2 mb-4 font-display text-2xl md:mt-3 md:mb-6 md:text-5xl">
             Немного <span className="italic text-gradient-gold">обо мне</span>
           </h2>
-          <div className="space-y-4 text-foreground/85 leading-relaxed">
+          <div className="space-y-3 leading-relaxed text-foreground/85 md:space-y-4">
             <p>
               Люблю чистый маникюр, аккуратную форму и дизайн, который выглядит
               стильно не только на фото, но и в жизни.
@@ -40,21 +40,21 @@ export function About() {
             </p>
           </div>
 
-          <div className="mt-8 grid grid-cols-3 gap-4">
+          <div className="mt-6 grid grid-cols-3 gap-2 md:mt-8 md:gap-4">
             {[
               { k: "5.0", v: "Рейтинг" },
               { k: "18+", v: "Отзывов" },
               { k: "100%", v: "Стерильность" },
             ].map((s) => (
-              <div key={s.v} className="rounded-2xl bg-cream/60 border border-border p-4 text-center">
-                <div className="font-display text-2xl text-foreground">{s.k}</div>
+              <div key={s.v} className="rounded-2xl border border-border bg-cream/60 p-3 text-center md:p-4">
+                <div className="font-display text-xl text-foreground md:text-2xl">{s.k}</div>
                 <div className="text-xs text-muted-foreground mt-1">{s.v}</div>
               </div>
             ))}
           </div>
 
           <a href={brand.bookingUrl}
-             className="inline-flex items-center gap-2 mt-8 rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground hover:opacity-90">
+             className="mt-6 inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground hover:opacity-90 md:mt-8 md:px-6 md:py-3">
             <Sparkles className="h-4 w-4" /> Записаться онлайн
           </a>
         </div>

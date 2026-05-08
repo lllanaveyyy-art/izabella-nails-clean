@@ -534,22 +534,22 @@ export function Booking() {
 
   return (
     <>
-      <section id="booking" className="py-12 md:py-16 bg-gradient-rose">
-        <div className="mx-auto max-w-5xl px-6">
-          <div className="rounded-[2rem] bg-card shadow-elegant p-8 md:p-14 text-center">
+      <section id="booking" className="bg-gradient-rose py-8 md:py-16">
+        <div className="mx-auto max-w-5xl px-4 md:px-6">
+          <div className="rounded-[1.5rem] bg-card p-5 text-center shadow-elegant md:rounded-[2rem] md:p-14">
             <span className="text-xs uppercase tracking-[0.25em] text-primary font-medium">Запись</span>
-            <h2 className="font-display text-3xl md:text-5xl mt-3 mb-5">
+            <h2 className="mt-2 mb-3 font-display text-2xl md:mt-3 md:mb-5 md:text-5xl">
               Готовы к <span className="italic text-gradient-gold">красивому маникюру?</span>
             </h2>
-            <p className="text-muted-foreground max-w-xl mx-auto leading-relaxed mb-8">
+            <p className="mx-auto mb-5 max-w-xl leading-relaxed text-muted-foreground md:mb-8">
               Выберите удобный способ записи. Отвечу быстро и помогу подобрать удобное время и нужную услугу.
             </p>
 
-            <div className="flex flex-wrap justify-center gap-3 mb-10">
+            <div className="mb-6 flex flex-wrap justify-center gap-2.5 md:mb-10 md:gap-3">
               <a
                 href={brand.bookingUrl}
                 data-cta="booking-online"
-                className="inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3.5 text-sm font-medium text-primary-foreground shadow-soft hover:opacity-90"
+                className="inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground shadow-soft hover:opacity-90 md:px-7 md:py-3.5"
               >
                 <CalendarCheck className="h-4 w-4" /> Записаться онлайн
               </a>
@@ -558,7 +558,7 @@ export function Booking() {
                 target="_blank"
                 rel="noreferrer noopener"
                 data-cta="booking-telegram"
-                className="inline-flex items-center gap-2 rounded-full border border-foreground/15 bg-background px-7 py-3.5 text-sm font-medium text-foreground hover:bg-secondary"
+                className="inline-flex items-center gap-2 rounded-full border border-foreground/15 bg-background px-5 py-2.5 text-sm font-medium text-foreground hover:bg-secondary md:px-7 md:py-3.5"
               >
                 <Send className="h-4 w-4" /> Написать в Telegram
               </a>
@@ -567,7 +567,7 @@ export function Booking() {
                 target="_blank"
                 rel="noreferrer noopener"
                 data-cta="booking-vk"
-                className="inline-flex items-center gap-2 rounded-full border border-foreground/15 bg-background px-7 py-3.5 text-sm font-medium text-foreground hover:bg-secondary"
+                className="inline-flex items-center gap-2 rounded-full border border-foreground/15 bg-background px-5 py-2.5 text-sm font-medium text-foreground hover:bg-secondary md:px-7 md:py-3.5"
               >
                 <span className="font-bold text-xs">VK</span> Написать в ВКонтакте
               </a>
@@ -578,30 +578,30 @@ export function Booking() {
               {brand.city}, {brand.address}
             </div>
 
-            <div className="mt-10 overflow-hidden rounded-[1.5rem] border border-border bg-background shadow-card text-left">
-              <div className="px-6 py-5 border-b border-border/70">
+            <div className="mt-6 overflow-hidden rounded-[1.5rem] border border-border bg-background text-left shadow-card md:mt-10">
+              <div className="border-b border-border/70 px-4 py-3 md:px-6 md:py-5">
                 <div className="text-sm font-semibold text-foreground">Как добраться</div>
                 <div className="text-sm text-muted-foreground mt-1">{brand.address}</div>
               </div>
               <iframe
                 title="Карта Izabella Nails"
                 src="https://yandex.ru/map-widget/v1/?text=%D0%A1%D0%BC%D0%BE%D0%BB%D0%B5%D0%BD%D1%81%D0%BA%2C%20%D1%83%D0%BB.%2025-%D0%A1%D0%B5%D0%BD%D1%82%D1%8F%D0%B1%D1%80%D1%8F%2C%2016&z=16"
-                className="h-[320px] w-full border-0"
+                className="h-[220px] w-full border-0 md:h-[320px]"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
               />
-              <div className="px-6 py-4 flex flex-wrap gap-3">
+              <div className="flex flex-wrap gap-2.5 px-4 py-3 md:gap-3 md:px-6 md:py-4">
                 <a
                   href="https://yandex.ru/maps/?text=%D0%A1%D0%BC%D0%BE%D0%BB%D0%B5%D0%BD%D1%81%D0%BA%2C%20%D1%83%D0%BB.%2025-%D0%A1%D0%B5%D0%BD%D1%82%D1%8F%D0%B1%D1%80%D1%8F%2C%2016"
                   target="_blank"
                   rel="noreferrer noopener"
-                  className="inline-flex items-center gap-2 rounded-full border border-foreground/15 bg-card px-5 py-2.5 text-sm font-medium text-foreground hover:bg-secondary"
+                  className="inline-flex items-center gap-2 rounded-full border border-foreground/15 bg-card px-4 py-2 text-sm font-medium text-foreground hover:bg-secondary md:px-5 md:py-2.5"
                 >
                   Открыть в Яндекс Картах
                 </a>
                 <a
                   href={brand.bookingUrl}
-                  className="inline-flex items-center gap-2 rounded-full border border-foreground/15 bg-card px-5 py-2.5 text-sm font-medium text-foreground hover:bg-secondary"
+                  className="inline-flex items-center gap-2 rounded-full border border-foreground/15 bg-card px-4 py-2 text-sm font-medium text-foreground hover:bg-secondary md:px-5 md:py-2.5"
                 >
                   Перейти к записи
                 </a>
@@ -629,13 +629,13 @@ export function Booking() {
               <X className="h-4 w-4" />
             </button>
 
-            <div className="border-b border-border/70 px-5 pb-5 pt-12 md:p-8 md:pt-8">
+            <div className="border-b border-border/70 px-4 pb-4 pt-11 md:p-8 md:pt-8">
               {!successMessage ? (
                 <div className="mb-3 text-[11px] font-medium uppercase tracking-[0.25em] text-primary">
                   Онлайн-запись
                 </div>
               ) : null}
-              <h3 className="pr-10 font-display text-2xl text-foreground md:text-4xl">
+              <h3 className="pr-10 font-display text-xl text-foreground md:text-4xl">
                 {successMessage
                   ? <>Запись <span className="italic text-gradient-gold">подтверждена</span></>
                   : step === 1
@@ -644,7 +644,7 @@ export function Booking() {
                       ? <>Шаг 2: <span className="italic text-gradient-gold">дата и время</span></>
                       : <>Шаг 3: <span className="italic text-gradient-gold">подтверждение</span></>}
               </h3>
-              <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted-foreground md:text-base">
+              <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted-foreground md:mt-3 md:text-base">
                 {!successMessage && step === 1 && "Сначала выбери услугу."}
               </p>
             </div>
@@ -652,13 +652,13 @@ export function Booking() {
             <div className="h-[calc(100dvh-126px)] overflow-y-auto md:h-auto md:max-h-[calc(90vh-120px)]">
 
             {message ? (
-              <div className="mx-6 mt-6 rounded-2xl border border-primary/20 bg-rose-soft px-4 py-3 text-sm text-foreground md:mx-8">
+              <div className="mx-4 mt-4 rounded-2xl border border-primary/20 bg-rose-soft px-4 py-3 text-sm text-foreground md:mx-8 md:mt-6">
                 {message}
               </div>
             ) : null}
 
             {successMessage ? (
-              <div className="mx-6 mt-6 mb-6 md:mx-8 md:mb-8">
+              <div className="mx-4 mt-4 mb-4 md:mx-8 md:mt-6 md:mb-8">
                 <div className="grid overflow-hidden rounded-[1.75rem] border border-[#efe4db] bg-white shadow-[0_24px_80px_rgba(42,23,15,0.12)] lg:min-h-[360px] lg:grid-cols-[1.2fr_0.8fr]">
                   <div className="h-full bg-[#fff6f2] px-6 pt-8 pb-8 md:px-8 md:pt-8 md:pb-8">
                     <div className="inline-flex items-center rounded-full border border-primary/15 bg-white/80 px-3 py-1 text-[11px] font-medium uppercase tracking-[0.24em] text-primary">
@@ -699,7 +699,7 @@ export function Booking() {
             ) : null}
 
             {step === 1 ? (
-              <div className="p-5 md:p-8">
+              <div className="p-4 md:p-8">
                 <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
                   {serviceOptions.map((option) => {
                     const active = option.id === serviceId;
@@ -708,7 +708,7 @@ export function Booking() {
                         key={option.id}
                         type="button"
                         onClick={() => setServiceId(option.id)}
-                        className={`rounded-2xl border p-4 text-left transition-all ${
+                        className={`rounded-2xl border p-3 text-left transition-all md:p-4 ${
                           active
                             ? "border-primary bg-rose-soft shadow-soft"
                             : "border-border bg-background hover:border-primary/40 hover:bg-secondary/40"
@@ -721,18 +721,18 @@ export function Booking() {
                           </div>
                           {active ? <Check className="mt-0.5 h-4 w-4 text-primary" /> : null}
                         </div>
-                        <div className="mt-3 font-display text-xl text-foreground">{option.price}</div>
+                        <div className="mt-2 font-display text-lg text-foreground md:mt-3 md:text-xl">{option.price}</div>
                       </button>
                     );
                   })}
                 </div>
 
-                <div className="mt-6 flex justify-end">
+                <div className="mt-4 flex justify-end md:mt-6">
                   <button
                     type="button"
                     onClick={openDateTimeStep}
                     disabled={loading}
-                    className="inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3.5 text-sm font-medium text-primary-foreground shadow-soft hover:opacity-90 disabled:opacity-60"
+                    className="inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground shadow-soft hover:opacity-90 disabled:opacity-60 md:px-7 md:py-3.5"
                   >
                     {loading ? <Loader2 className="h-4 w-4 animate-spin" /> : null}
                     Дальше
@@ -742,15 +742,15 @@ export function Booking() {
             ) : null}
 
             {step === 2 ? (
-              <div className="p-5 md:p-8">
-                <div className="rounded-2xl border border-border bg-background p-5">
+              <div className="p-4 md:p-8">
+                <div className="rounded-2xl border border-border bg-background p-4 md:p-5">
                   <div className="text-xs uppercase tracking-widest text-muted-foreground mb-2">Выбрано</div>
                   <div className="font-medium text-foreground">{selectedService.title}</div>
                   <div className="mt-1 text-sm text-muted-foreground">{selectedService.duration} · {selectedService.price}</div>
                 </div>
 
-                <div className="mt-5 grid gap-4 lg:grid-cols-[1.15fr_0.85fr]">
-                  <div className="rounded-2xl border border-border bg-background p-5">
+                <div className="mt-4 grid gap-3 md:gap-4 lg:grid-cols-[1.15fr_0.85fr]">
+                  <div className="rounded-2xl border border-border bg-background p-4 md:p-5">
                     <div className="flex items-center justify-between gap-3">
                       <div>
                         <div className="text-sm font-semibold text-foreground">Дата</div>
@@ -771,7 +771,7 @@ export function Booking() {
                           >
                             <ChevronLeft className="h-4 w-4" />
                           </button>
-                          <div className="min-w-[9rem] text-center text-sm text-foreground">{formatMonthLabel(visibleMonth) || "Даты"}</div>
+                          <div className="min-w-[7rem] text-center text-sm text-foreground md:min-w-[9rem]">{formatMonthLabel(visibleMonth) || "Даты"}</div>
                           <button
                             type="button"
                             onClick={() => loadMonthAvailability(shiftMonth(visibleMonth, 1))}
@@ -784,16 +784,16 @@ export function Booking() {
                       )}
                     </div>
 
-                    <div className="mt-4 grid grid-cols-7 gap-1.5 text-center text-[11px] uppercase tracking-wide text-muted-foreground md:gap-2 md:text-xs">
+                    <div className="mt-3 grid grid-cols-7 gap-1 text-center text-[11px] uppercase tracking-wide text-muted-foreground md:mt-4 md:gap-2 md:text-xs">
                       {['пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'вс'].map((day) => (
                         <div key={day} className="py-1">{day}</div>
                       ))}
                     </div>
 
-                    <div className="mt-2 grid grid-cols-7 gap-1.5 md:gap-2">
+                    <div className="mt-2 grid grid-cols-7 gap-1 md:gap-2">
                       {calendarDays.map((cell) => {
                         if (!cell.date) {
-                          return <div key={cell.key} className="h-10 rounded-2xl md:h-11" />;
+                          return <div key={cell.key} className="h-9 rounded-2xl md:h-11" />;
                         }
 
                         const date = cell.date;
@@ -804,7 +804,7 @@ export function Booking() {
                             type="button"
                             onClick={() => handleDateSelect(date)}
                             disabled={!cell.available || loading}
-                            className={`h-10 rounded-2xl text-sm transition-all md:h-11 ${
+                            className={`h-9 rounded-2xl text-sm transition-all md:h-11 ${
                               active
                                 ? 'bg-primary text-primary-foreground'
                                 : cell.available
@@ -819,16 +819,16 @@ export function Booking() {
                     </div>
                   </div>
 
-                  <div className="rounded-2xl border border-border bg-background p-5">
+                  <div className="rounded-2xl border border-border bg-background p-4 md:p-5">
                     <div className="text-sm font-semibold text-foreground mb-3">Время</div>
-                    <div className="max-h-[320px] overflow-y-auto pr-1">
+                    <div className="max-h-[260px] overflow-y-auto pr-1 md:max-h-[320px]">
                     <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
                       {timeOptions.map((value) => (
                         <button
                           key={value}
                           type="button"
                           onClick={() => setSelectedSlot(value)}
-                          className={`rounded-2xl px-3 py-3 text-sm transition-all ${
+                          className={`rounded-2xl px-3 py-2.5 text-sm transition-all md:py-3 ${
                             value === selectedSlot
                               ? 'bg-primary text-primary-foreground'
                               : 'border border-border bg-card text-foreground hover:bg-secondary'
@@ -842,11 +842,11 @@ export function Booking() {
                   </div>
                 </div>
 
-                <div className="mt-6 flex flex-col-reverse gap-3 sm:flex-row sm:flex-wrap sm:justify-between">
+                <div className="mt-4 flex flex-col-reverse gap-2.5 sm:flex-row sm:flex-wrap sm:justify-between md:mt-6 md:gap-3">
                   <button
                     type="button"
                     onClick={() => setStep(1)}
-                    className="inline-flex items-center gap-2 rounded-full border border-foreground/15 bg-background px-6 py-3 text-sm font-medium text-foreground hover:bg-secondary"
+                    className="inline-flex items-center gap-2 rounded-full border border-foreground/15 bg-background px-5 py-2.5 text-sm font-medium text-foreground hover:bg-secondary md:px-6 md:py-3"
                   >
                     <ChevronLeft className="h-4 w-4" /> Назад
                   </button>
@@ -854,7 +854,7 @@ export function Booking() {
                     type="button"
                     onClick={goToConfirmation}
                     disabled={!selectedDateTime || loading}
-                    className="inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3.5 text-sm font-medium text-primary-foreground shadow-soft hover:opacity-90 disabled:opacity-60"
+                    className="inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground shadow-soft hover:opacity-90 disabled:opacity-60 md:px-7 md:py-3.5"
                   >
                     К подтверждению
                   </button>
@@ -863,8 +863,8 @@ export function Booking() {
             ) : null}
 
             {step === 3 && !successMessage ? (
-              <div className="p-5 md:p-8">
-                <div className="rounded-2xl border border-border bg-background p-5">
+              <div className="p-4 md:p-8">
+                <div className="rounded-2xl border border-border bg-background p-4 md:p-5">
                   <div className="text-xs uppercase tracking-widest text-muted-foreground mb-2">Подтверждаем запись</div>
                   <div className="font-medium text-foreground">{selectedService.title}</div>
                   <div className="mt-1 text-sm text-muted-foreground">
@@ -872,8 +872,8 @@ export function Booking() {
                   </div>
                 </div>
 
-                <div className="mt-5 grid gap-4 lg:grid-cols-2">
-                  <div className="rounded-2xl border border-border bg-background p-5">
+                <div className="mt-4 grid gap-3 md:gap-4 lg:grid-cols-2">
+                  <div className="rounded-2xl border border-border bg-background p-4 md:p-5">
                     <label className="block text-sm font-semibold text-foreground mb-2" htmlFor="booking-name">
                       Имя
                     </label>
@@ -886,12 +886,12 @@ export function Booking() {
                         setSmsCode("");
                         setSuccessMessage("");
                       }}
-                      className="h-14 w-full rounded-2xl border border-border bg-card px-4 text-base text-foreground outline-none transition focus:border-primary"
+                      className="h-12 w-full rounded-2xl border border-border bg-card px-4 text-base text-foreground outline-none transition focus:border-primary md:h-14"
                       placeholder="Как вас зовут"
                     />
                   </div>
 
-                  <div className="rounded-2xl border border-border bg-background p-5">
+                  <div className="rounded-2xl border border-border bg-background p-4 md:p-5">
                     <label className="block text-sm font-semibold text-foreground mb-2" htmlFor="booking-phone">
                       Телефон
                     </label>
@@ -906,13 +906,13 @@ export function Booking() {
                         setSmsCode("");
                         setSuccessMessage("");
                       }}
-                      className="h-14 w-full rounded-2xl border border-border bg-card px-4 text-base text-foreground outline-none transition focus:border-primary"
+                      className="h-12 w-full rounded-2xl border border-border bg-card px-4 text-base text-foreground outline-none transition focus:border-primary md:h-14"
                       placeholder="+7 999 123-45-67"
                     />
                   </div>
                 </div>
 
-                <div className="mt-4 rounded-2xl border border-border bg-background p-5">
+                <div className="mt-3 rounded-2xl border border-border bg-background p-4 md:mt-4 md:p-5">
                   <label className="block text-sm font-semibold text-foreground mb-2" htmlFor="booking-comment">
                     Комментарий (необязательно)
                   </label>
@@ -920,13 +920,13 @@ export function Booking() {
                     id="booking-comment"
                     value={comment}
                     onChange={(event) => setComment(event.target.value)}
-                    className="min-h-28 w-full rounded-2xl border border-border bg-card px-4 py-3 text-base text-foreground outline-none transition focus:border-primary"
+                    className="min-h-24 w-full rounded-2xl border border-border bg-card px-4 py-3 text-base text-foreground outline-none transition focus:border-primary md:min-h-28"
                     placeholder="Например: нужен дизайн или снятие"
                   />
                 </div>
 
                 {smsRequested ? (
-                  <div className="mt-4 rounded-2xl border border-border bg-background p-5">
+                  <div className="mt-3 rounded-2xl border border-border bg-background p-4 md:mt-4 md:p-5">
                     <label className="block text-sm font-semibold text-foreground mb-2" htmlFor="booking-code">
                       Код из SMS
                     </label>
@@ -934,17 +934,17 @@ export function Booking() {
                       id="booking-code"
                       value={smsCode}
                       onChange={(event) => setSmsCode(event.target.value)}
-                      className="h-14 w-full rounded-2xl border border-border bg-card px-4 text-base text-foreground outline-none transition focus:border-primary"
+                      className="h-12 w-full rounded-2xl border border-border bg-card px-4 text-base text-foreground outline-none transition focus:border-primary md:h-14"
                       placeholder="Введите код"
                     />
                   </div>
                 ) : null}
 
-                <div className="mt-6 flex flex-wrap justify-between gap-3">
+                <div className="mt-4 flex flex-wrap justify-between gap-2.5 md:mt-6 md:gap-3">
                   <button
                     type="button"
                     onClick={() => setStep(2)}
-                    className="inline-flex items-center gap-2 rounded-full border border-foreground/15 bg-background px-6 py-3 text-sm font-medium text-foreground hover:bg-secondary"
+                    className="inline-flex items-center gap-2 rounded-full border border-foreground/15 bg-background px-5 py-2.5 text-sm font-medium text-foreground hover:bg-secondary md:px-6 md:py-3"
                   >
                     <ChevronLeft className="h-4 w-4" /> Назад
                   </button>
@@ -954,7 +954,7 @@ export function Booking() {
                       type="button"
                       onClick={finalizeWithCode}
                       disabled={submitting}
-                      className="inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3.5 text-sm font-medium text-primary-foreground shadow-soft hover:opacity-90 disabled:opacity-60"
+                      className="inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground shadow-soft hover:opacity-90 disabled:opacity-60 md:px-7 md:py-3.5"
                     >
                       {submitting ? <Loader2 className="h-4 w-4 animate-spin" /> : <CalendarCheck className="h-4 w-4" />}
                       Подтвердить запись
@@ -964,7 +964,7 @@ export function Booking() {
                       type="button"
                       onClick={startConfirmation}
                       disabled={submitting}
-                      className="inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3.5 text-sm font-medium text-primary-foreground shadow-soft hover:opacity-90 disabled:opacity-60"
+                      className="inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground shadow-soft hover:opacity-90 disabled:opacity-60 md:px-7 md:py-3.5"
                     >
                       {submitting ? <Loader2 className="h-4 w-4 animate-spin" /> : <CalendarCheck className="h-4 w-4" />}
                       Подтвердить запись

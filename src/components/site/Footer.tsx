@@ -4,7 +4,7 @@ import { brand } from "@/data/brand";
 export function Footer() {
   return (
     <footer className="bg-foreground text-background/90">
-      <div className="mx-auto max-w-7xl px-6 py-14 grid md:grid-cols-3 gap-10">
+      <div className="mx-auto grid max-w-7xl gap-7 px-4 py-8 md:grid-cols-3 md:gap-10 md:px-6 md:py-14">
         <div>
           <div className="font-display text-2xl">
             Izabella <span className="text-gradient-gold">Nails</span>
@@ -12,14 +12,14 @@ export function Footer() {
           <div className="text-xs uppercase tracking-[0.2em] text-background/60 mt-1">
             {brand.tagline}
           </div>
-          <p className="text-sm text-background/70 mt-5 leading-relaxed max-w-xs">
+          <p className="mt-3 max-w-xs text-sm leading-relaxed text-background/70 md:mt-5">
             Маникюр в Смоленске: чистая работа, аккуратная форма, качественные
             материалы и удобная запись онлайн.
           </p>
         </div>
 
         <div>
-          <div className="text-xs uppercase tracking-widest text-background/60 mb-4">Навигация</div>
+          <div className="mb-3 text-xs uppercase tracking-widest text-background/60 md:mb-4">Навигация</div>
           <ul className="space-y-2 text-sm">
             <li><a href="#services" className="hover:text-background transition-colors">Услуги</a></li>
             <li><a href="#portfolio" className="hover:text-background transition-colors">Работы</a></li>
@@ -30,8 +30,8 @@ export function Footer() {
         </div>
 
         <div>
-          <div className="text-xs uppercase tracking-widest text-background/60 mb-4">Контакты</div>
-          <ul className="space-y-3 text-sm">
+          <div className="mb-3 text-xs uppercase tracking-widest text-background/60 md:mb-4">Контакты</div>
+          <ul className="space-y-2 text-sm md:space-y-3">
             <li className="flex items-start gap-2">
               <MapPin className="h-4 w-4 mt-0.5 text-rose" />
               <span>{brand.city}, {brand.address}</span>
@@ -57,14 +57,14 @@ export function Footer() {
           </ul>
 
           <a href={brand.bookingUrl}
-             className="inline-flex items-center mt-6 rounded-full bg-background text-foreground px-5 py-2.5 text-sm font-medium hover:opacity-90">
+             className="mt-4 inline-flex items-center rounded-full bg-background px-4 py-2 text-sm font-medium text-foreground hover:opacity-90 md:mt-6 md:px-5 md:py-2.5">
             Записаться онлайн
           </a>
         </div>
       </div>
 
       <div className="border-t border-background/10">
-        <div className="mx-auto max-w-7xl px-6 py-5 text-xs text-background/50 flex flex-wrap items-center justify-between gap-2">
+        <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-2 px-4 py-4 text-xs text-background/50 md:px-6 md:py-5">
           <span>© {new Date().getFullYear()} Izabella Nails · Смоленск</span>
           <span>Маникюр · Наращивание · Дизайн</span>
         </div>
