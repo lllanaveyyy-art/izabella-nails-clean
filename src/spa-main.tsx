@@ -10,6 +10,7 @@ import { Reviews } from '@/components/site/Reviews';
 import { About } from '@/components/site/About';
 import { Booking } from '@/components/site/Booking';
 import { Footer } from '@/components/site/Footer';
+import { YandexMetrika } from '@/components/YandexMetrika';
 import '@/styles.css';
 
 function App() {
@@ -34,5 +35,6 @@ function App() {
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <App />
+    <YandexMetrika />
   </StrictMode>,
 );
