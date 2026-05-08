@@ -593,33 +593,15 @@ export function Booking() {
               {brand.city}, {brand.address}
             </div>
 
-            <div className="mt-5 rounded-2xl border border-border bg-background/80 p-4 text-left md:mt-8 md:p-6">
-              <h3 className="font-display text-xl text-foreground md:text-2xl">
-                Маникюр в Смоленске на ул. 25 Сентября
-              </h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground md:text-base">
-                Izabella Nails — место для аккуратного маникюра в Смоленске на ул. 25 Сентября, 16.
-                Можно записаться на классический маникюр, покрытие гель-лаком, укрепление,
-                наращивание и дизайн ногтей. Удобно добраться из Промышленного района,
-                Медгородка, центра Смоленска и соседних районов.
-              </p>
-              <div className="mt-4 flex flex-wrap items-center gap-2 rounded-2xl bg-rose-soft/70 px-4 py-3 text-sm text-foreground">
-                <span className="font-medium">Для новых клиентов</span>
-                <span className="text-muted-foreground">можно уточнить актуальный бонус при записи.</span>
-                <a
-                  href={brand.bookingUrl}
-                  data-cta="booking"
-                  className="ml-0 inline-flex rounded-full bg-primary px-4 py-2 text-xs font-medium text-primary-foreground hover:opacity-90 md:ml-auto"
-                >
-                  Записаться
-                </a>
-              </div>
-            </div>
-
             <div className="mt-4 overflow-hidden rounded-[1.5rem] border border-border bg-background text-left shadow-card md:mt-10">
               <div className="border-b border-border/70 px-4 py-3 md:px-6 md:py-5">
                 <div className="text-sm font-semibold text-foreground">Как добраться</div>
                 <div className="text-sm text-muted-foreground mt-1">Смоленск, ул. 25 Сентября, 16</div>
+                <p className="mt-2 text-xs leading-relaxed text-muted-foreground md:text-sm">
+                  Маникюр, гель-лак, укрепление, наращивание и дизайн ногтей в Смоленске
+                  на ул. 25 Сентября, 16 — удобно добраться из Медгородка,
+                  Промышленного района и центра Смоленска.
+                </p>
               </div>
               <iframe
                 title="Карта Izabella Nails"
