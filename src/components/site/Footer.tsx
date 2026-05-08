@@ -73,7 +73,7 @@ export function Footer() {
       <div className="border-t border-background/10">
         <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-2 px-3 py-3 text-xs text-background/50 md:px-6 md:py-5">
           <span>© {new Date().getFullYear()} Izabella Nails · Смоленск</span>
-          <span>Маникюр · Наращивание · Дизайн</span>
+          <span>Маникюр в Смоленске · 25 Сентября, 16 · гель-лак · укрепление · наращивание · дизайн</span>
         </div>
       </div>
     </footer>
