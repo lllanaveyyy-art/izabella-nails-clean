@@ -52,8 +52,7 @@ function parseSession(html) {
   }
 
   const fallback = html.match(/"session":"([^"]+)"/);
-  if (!fallback) throw new Error("Не удалось получить сессию записи");
-  return fallback[1];
+  return fallback?.[1] || "";
 }
 
 async function getBootstrap() {
@@ -106,7 +105,8 @@ async function fetchJsonFromDikidi(url, params, { method = "GET", body } = {}) {
 }
 
 async function getAvailability(session, serviceId, date) {
-  const payload = await fetchJsonFromDikidi(`https://dikidi.net/${LANG}/mobile/ajax/newrecord/get_datetimes/`, {
+  const endpoint = `https://dikidi.net/${LANG}/mobile/ajax/newrecord/get_datetimes/`;
+  const payload = await fetchJsonFromDikidi(endpoint, {
     session,
     company_id: COMPANY_ID,
     master_id: MASTER_ID,
@@ -127,6 +127,13 @@ async function getAvailability(session, serviceId, date) {
     availableDates: data.dates_true || [],
     selectedDate,
     times,
+    debug: {
+      endpoint,
+      dikidiError: payload.error || null,
+      companyId: data.company?.id || null,
+      masterId: data.company?.master || MASTER_ID,
+      statusId: data.company?.status_id || null,
+    },
   };
 }
 
