@@ -23,7 +23,7 @@ const works = [
 export function Portfolio() {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const [startIndex, setStartIndex] = useState(0);
-  const [captionIndex, setCaptionIndex] = useState<number | null>(null);
+  const [revealedCaptionIndex, setRevealedCaptionIndex] = useState<number | null>(null);
   const activeWork = activeIndex !== null ? works[activeIndex] : null;
   const visibleWorks = getVisibleWorks(works.map((work, index) => ({ ...work, index })), startIndex, 4);
 
@@ -36,7 +36,7 @@ export function Portfolio() {
 
   const handleWorkClick = (index: number) => {
     if (window.matchMedia("(max-width: 767px)").matches) {
-      setCaptionIndex((current) => (current === index ? null : index));
+      setRevealedCaptionIndex((current) => (current === index ? null : index));
       return;
     }
 
@@ -45,8 +45,8 @@ export function Portfolio() {
 
   return (
     <section id="portfolio" className="bg-background py-8 md:py-16">
-      <div className="mx-auto max-w-7xl px-4 md:px-6">
-        <div className="mb-7 flex flex-wrap items-end justify-between gap-4 md:mb-14">
+      <div className="mx-auto max-w-7xl px-3 md:px-6">
+        <div className="mb-5 flex flex-wrap items-end justify-between gap-4 md:mb-14">
           <div className="max-w-2xl">
             <span className="text-xs uppercase tracking-[0.25em] text-primary font-medium">Портфолио</span>
             <h2 className="mt-2 mb-3 font-display text-2xl md:mt-3 md:mb-4 md:text-5xl">
@@ -55,11 +55,11 @@ export function Portfolio() {
           </div>
         </div>
 
-        <div className="relative mx-auto max-w-6xl px-0 md:px-12">
+        <div className="relative mx-auto max-w-6xl px-1 md:px-12">
           <button
             type="button"
             onClick={() => move("prev")}
-            className="absolute left-1 top-1/2 z-10 inline-flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full border border-border bg-card/90 text-foreground shadow-card transition hover:bg-rose-soft md:left-0 md:h-10 md:w-10"
+            className="absolute left-1 top-1/2 z-10 inline-flex h-7 w-7 -translate-y-1/2 items-center justify-center rounded-full border border-border bg-card/90 text-foreground shadow-card transition hover:bg-rose-soft md:left-0 md:h-10 md:w-10"
             aria-label="Прокрутить работы назад"
           >
             <ChevronLeft className="h-3.5 w-3.5 md:h-4 md:w-4" />
@@ -71,7 +71,7 @@ export function Portfolio() {
                 key={w.index}
                 type="button"
                 onClick={() => handleWorkClick(w.index)}
-                className="group relative aspect-[3/4] overflow-hidden rounded-[1.25rem] bg-muted shadow-card focus:outline-none focus:ring-2 focus:ring-ring"
+                className="group relative aspect-[3/4] overflow-hidden rounded-xl bg-muted md:rounded-[1.25rem] shadow-card focus:outline-none focus:ring-2 focus:ring-ring"
               >
                 <img
                   src={w.src}
@@ -81,8 +81,8 @@ export function Portfolio() {
                   loading="lazy"
                   className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
-                <div className={`absolute inset-0 bg-gradient-to-t from-foreground/70 via-foreground/10 to-transparent md:block ${captionIndex === w.index ? "block" : "hidden"}`} />
-                <div className={`absolute inset-x-0 bottom-0 p-2 text-left text-card md:block md:p-3 ${captionIndex === w.index ? "block" : "hidden"}`}>
+                <div className={`absolute inset-0 bg-gradient-to-t from-foreground/70 via-foreground/10 to-transparent md:block ${revealedCaptionIndex === w.index ? "block" : "hidden"}`} />
+                <div className={`absolute inset-x-0 bottom-0 p-2 text-left text-card md:block md:p-3 ${revealedCaptionIndex === w.index ? "block" : "hidden"}`}>
                   <div className="text-xs font-medium leading-snug md:text-sm">{w.caption}</div>
                 </div>
               </button>
@@ -92,7 +92,7 @@ export function Portfolio() {
           <button
             type="button"
             onClick={() => move("next")}
-            className="absolute right-1 top-1/2 z-10 inline-flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full border border-border bg-card/90 text-foreground shadow-card transition hover:bg-rose-soft md:right-0 md:h-10 md:w-10"
+            className="absolute right-1 top-1/2 z-10 inline-flex h-7 w-7 -translate-y-1/2 items-center justify-center rounded-full border border-border bg-card/90 text-foreground shadow-card transition hover:bg-rose-soft md:right-0 md:h-10 md:w-10"
             aria-label="Прокрутить работы вперёд"
           >
             <ChevronRight className="h-3.5 w-3.5 md:h-4 md:w-4" />

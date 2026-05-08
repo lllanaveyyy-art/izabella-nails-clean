@@ -6,7 +6,7 @@ export function Services() {
   return (
     <section id="services" className="bg-cream/40 py-8 md:py-16">
       <div className="mx-auto max-w-7xl px-4 md:px-6">
-        <div className="mb-8 max-w-2xl md:mb-16">
+        <div className="mb-6 max-w-2xl md:mb-16">
           <span className="text-xs uppercase tracking-[0.25em] text-primary font-medium">Услуги</span>
           <h2 className="mt-2 mb-3 font-display text-2xl md:mt-3 md:mb-4 md:text-5xl">
             Прайс-лист <span className="italic text-gradient-gold">студии</span>
@@ -17,15 +17,15 @@ export function Services() {
           </p>
         </div>
 
-        <div className="grid gap-4 md:grid-cols-2 md:gap-5 lg:grid-cols-3">
+        <div className="grid gap-3 md:grid-cols-2 md:gap-5 lg:grid-cols-3">
           {services.map((s) => (
             <article
               key={s.id}
               data-service-id={s.id}
               data-service-duration={s.durationMinutes}
-              className="group relative flex flex-col rounded-3xl border border-border bg-card p-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-elegant md:p-7"
+              className="group relative flex flex-col rounded-2xl border border-border bg-card p-4 transition-all md:rounded-3xl duration-300 hover:-translate-y-1 hover:shadow-elegant md:p-7"
             >
-              <div className="mb-4 flex items-start justify-between gap-3 md:mb-5">
+              <div className="mb-3 flex items-start justify-between gap-3 md:mb-5">
                 <span className="inline-flex items-center gap-1.5 text-xs text-muted-foreground bg-secondary rounded-full px-3 py-1">
                   <Clock className="h-3 w-3" /> {s.duration}
                 </span>

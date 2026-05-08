@@ -4,9 +4,9 @@ import { brand } from "@/data/brand";
 export function Footer() {
   return (
     <footer className="bg-foreground text-background/90">
-      <div className="mx-auto grid max-w-7xl gap-7 px-4 py-8 md:grid-cols-3 md:gap-10 md:px-6 md:py-14">
+      <div className="mx-auto grid max-w-7xl gap-6 px-4 py-8 md:grid-cols-3 md:gap-10 md:px-6 md:py-14">
         <div>
-          <div className="font-display text-2xl">
+          <div className="font-display text-xl md:text-2xl">
             Izabella <span className="text-gradient-gold">Nails</span>
           </div>
           <div className="text-xs uppercase tracking-[0.2em] text-background/60 mt-1">

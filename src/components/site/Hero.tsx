@@ -8,20 +8,20 @@ export function Hero() {
       <div className="absolute inset-0 opacity-40 pointer-events-none"
            style={{ backgroundImage: "radial-gradient(circle at 20% 20%, oklch(0.92 0.05 25 / 0.6), transparent 60%), radial-gradient(circle at 80% 80%, oklch(0.95 0.04 70 / 0.6), transparent 60%)" }} />
 
-      <div className="relative mx-auto grid max-w-7xl items-center gap-7 px-4 py-10 md:px-6 md:py-24 lg:grid-cols-[1.1fr_1fr] lg:gap-16">
-        <div className="space-y-5 md:space-y-7">
+      <div className="relative mx-auto grid max-w-7xl items-center gap-6 px-4 py-9 md:gap-10 md:px-6 md:py-24 lg:grid-cols-[1.1fr_1fr] lg:gap-16">
+        <div className="space-y-4 md:space-y-7">
           <span className="inline-flex items-center gap-2 rounded-full bg-card/70 px-3 py-1.5 text-[11px] font-medium text-foreground/80 backdrop-blur border border-border md:px-4 md:text-xs">
             <Sparkles className="h-3.5 w-3.5 text-primary" />
             Nail-студия в Смоленске · {brand.address}
           </span>
 
-          <h1 className="font-display text-3xl leading-[1.06] text-foreground sm:text-5xl lg:text-6xl">
+          <h1 className="font-display text-[2rem] leading-[1.06] text-foreground sm:text-5xl lg:text-6xl">
             Чистый маникюр <br />
             и трендовые дизайны <br />
             <span className="italic text-gradient-gold">от Изабеллы</span>
           </h1>
 
-          <p className="text-base md:text-lg text-muted-foreground max-w-xl leading-relaxed">
+          <p className="text-sm text-muted-foreground md:text-lg max-w-xl leading-relaxed">
             Привет, я Изабелла - nail-мастер в Смоленске 💖 Люблю чистый
             маникюр, аккуратную форму и дизайн без перегруза. Качественные
             материалы, стерильность и внимание к деталям - чтобы результат
@@ -30,11 +30,11 @@ export function Hero() {
 
           <div className="flex flex-wrap items-center gap-2.5 md:gap-3">
             <a href={brand.bookingUrl} data-cta="hero-booking"
-               className="inline-flex items-center justify-center rounded-full bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground shadow-elegant transition-opacity hover:opacity-90 md:px-7 md:py-3.5">
+               className="inline-flex items-center justify-center rounded-full bg-primary px-4 py-2.5 text-sm font-medium text-primary-foreground shadow-elegant transition-opacity hover:opacity-90 md:px-7 md:py-3.5">
               Записаться онлайн
             </a>
             <a href="#services"
-               className="inline-flex items-center justify-center rounded-full border border-foreground/15 bg-card/60 px-5 py-2.5 text-sm font-medium text-foreground backdrop-blur transition-colors hover:bg-card md:px-7 md:py-3.5">
+               className="inline-flex items-center justify-center rounded-full border border-foreground/15 bg-card/60 px-4 py-2.5 text-sm font-medium text-foreground backdrop-blur transition-colors hover:bg-card md:px-7 md:py-3.5">
               Посмотреть услуги
             </a>
             <a href={brand.telegram} target="_blank" rel="noreferrer noopener"
@@ -59,7 +59,7 @@ export function Hero() {
         </div>
 
         {/* Visual collage */}
-        <div className="relative mx-auto aspect-[4/5] w-full max-w-sm md:max-w-md lg:max-w-none">
+        <div className="relative mx-auto aspect-[4/5] w-full max-w-xs md:max-w-md lg:max-w-none">
           <div className="absolute inset-0 rounded-[2rem] overflow-hidden shadow-elegant rotate-2">
             <img src={heroImg} alt="Аккуратный маникюр от Izabella Nails в Смоленске"
                  width={1080} height={1920}

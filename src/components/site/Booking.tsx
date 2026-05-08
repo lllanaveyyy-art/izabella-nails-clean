@@ -549,7 +549,7 @@ export function Booking() {
               <a
                 href={brand.bookingUrl}
                 data-cta="booking-online"
-                className="inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground shadow-soft hover:opacity-90 md:px-7 md:py-3.5"
+                className="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2.5 text-sm font-medium text-primary-foreground shadow-soft hover:opacity-90 md:px-7 md:py-3.5"
               >
                 <CalendarCheck className="h-4 w-4" /> Записаться онлайн
               </a>
@@ -558,7 +558,7 @@ export function Booking() {
                 target="_blank"
                 rel="noreferrer noopener"
                 data-cta="booking-telegram"
-                className="inline-flex items-center gap-2 rounded-full border border-foreground/15 bg-background px-5 py-2.5 text-sm font-medium text-foreground hover:bg-secondary md:px-7 md:py-3.5"
+                className="inline-flex items-center gap-2 rounded-full border border-foreground/15 bg-background px-4 py-2.5 text-sm font-medium text-foreground hover:bg-secondary md:px-7 md:py-3.5"
               >
                 <Send className="h-4 w-4" /> Написать в Telegram
               </a>
@@ -567,7 +567,7 @@ export function Booking() {
                 target="_blank"
                 rel="noreferrer noopener"
                 data-cta="booking-vk"
-                className="inline-flex items-center gap-2 rounded-full border border-foreground/15 bg-background px-5 py-2.5 text-sm font-medium text-foreground hover:bg-secondary md:px-7 md:py-3.5"
+                className="inline-flex items-center gap-2 rounded-full border border-foreground/15 bg-background px-4 py-2.5 text-sm font-medium text-foreground hover:bg-secondary md:px-7 md:py-3.5"
               >
                 <span className="font-bold text-xs">VK</span> Написать в ВКонтакте
               </a>
@@ -629,7 +629,7 @@ export function Booking() {
               <X className="h-4 w-4" />
             </button>
 
-            <div className="border-b border-border/70 px-4 pb-4 pt-11 md:p-8 md:pt-8">
+            <div className="border-b border-border/70 px-4 pb-3 pt-10 md:p-8">
               {!successMessage ? (
                 <div className="mb-3 text-[11px] font-medium uppercase tracking-[0.25em] text-primary">
                   Онлайн-запись
@@ -649,7 +649,7 @@ export function Booking() {
               </p>
             </div>
 
-            <div className="h-[calc(100dvh-126px)] overflow-y-auto md:h-auto md:max-h-[calc(90vh-120px)]">
+            <div className="h-[calc(100dvh-104px)] overflow-y-auto md:h-auto md:max-h-[calc(90vh-120px)]">
 
             {message ? (
               <div className="mx-4 mt-4 rounded-2xl border border-primary/20 bg-rose-soft px-4 py-3 text-sm text-foreground md:mx-8 md:mt-6">
