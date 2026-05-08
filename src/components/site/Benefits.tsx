@@ -11,16 +11,16 @@ const benefits = [
 
 export function Benefits() {
   return (
-    <section className="bg-background py-8 md:py-16">
-      <div className="mx-auto max-w-7xl px-4 md:px-6">
-        <div className="grid gap-3 sm:grid-cols-2 md:gap-4 lg:grid-cols-3">
+    <section className="bg-background py-6 md:py-16">
+      <div className="mx-auto max-w-7xl px-3 md:px-6">
+        <div className="grid grid-cols-2 gap-2 md:gap-4 lg:grid-cols-3">
           {benefits.map(({ icon: Icon, title, text }) => (
-            <div key={title} className="rounded-2xl border border-border bg-card p-4 transition-shadow hover:shadow-soft md:p-6">
-              <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-xl bg-rose-soft md:mb-4 md:h-11 md:w-11">
-                <Icon className="h-5 w-5 text-primary" />
+            <div key={title} className="rounded-xl border border-border bg-card p-3 transition-shadow hover:shadow-soft md:rounded-2xl md:p-6">
+              <div className="mb-2 flex h-8 w-8 items-center justify-center rounded-lg bg-rose-soft md:mb-4 md:h-11 md:w-11 md:rounded-xl">
+                <Icon className="h-4 w-4 text-primary md:h-5 md:w-5" />
               </div>
-              <h3 className="mb-1 font-display text-base md:mb-1.5 md:text-lg">{title}</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">{text}</p>
+              <h3 className="mb-1 font-display text-sm leading-tight md:mb-1.5 md:text-lg">{title}</h3>
+              <p className="text-xs leading-snug text-muted-foreground md:text-sm md:leading-relaxed">{text}</p>
             </div>
           ))}
         </div>

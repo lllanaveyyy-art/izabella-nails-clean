@@ -585,14 +585,14 @@ export function Booking() {
               </div>
               <iframe
                 title="Карта Izabella Nails"
-                src="https://yandex.ru/map-widget/v1/?text=%D0%A1%D0%BC%D0%BE%D0%BB%D0%B5%D0%BD%D1%81%D0%BA%2C%20%D1%83%D0%BB.%2025-%D0%A1%D0%B5%D0%BD%D1%82%D1%8F%D0%B1%D1%80%D1%8F%2C%2016&z=16"
+                src="https://yandex.ru/map-widget/v1/?ll=32.0657229%2C54.7656936&pt=32.0657229%2C54.7656936%2Cpm2rdm&z=17"
                 className="h-[180px] w-full border-0 md:h-[320px]"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
               />
               <div className="flex flex-wrap gap-2.5 px-4 py-3 md:gap-3 md:px-6 md:py-4">
                 <a
-                  href="https://yandex.ru/maps/?text=%D0%A1%D0%BC%D0%BE%D0%BB%D0%B5%D0%BD%D1%81%D0%BA%2C%20%D1%83%D0%BB.%2025-%D0%A1%D0%B5%D0%BD%D1%82%D1%8F%D0%B1%D1%80%D1%8F%2C%2016"
+                  href="https://yandex.ru/maps/?ll=32.0657229%2C54.7656936&pt=32.0657229%2C54.7656936%2Cpm2rdm&z=17"
                   target="_blank"
                   rel="noreferrer noopener"
                   className="inline-flex items-center gap-2 rounded-full border border-foreground/15 bg-card px-4 py-2 text-sm font-medium text-foreground hover:bg-secondary md:px-5 md:py-2.5"
