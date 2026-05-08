@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://izabellanails.vercel.app/sitemap.xml

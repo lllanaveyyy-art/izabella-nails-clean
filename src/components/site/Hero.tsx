@@ -1,6 +1,7 @@
 import { Send, Star, Sparkles } from "lucide-react";
 import heroImg from "@/assets/real-work-8.jpg";
 import { brand } from "@/data/brand";
+import { trackGoal } from "@/components/YandexMetrika";
 
 export function Hero() {
   return (
@@ -12,7 +13,7 @@ export function Hero() {
         <div className="space-y-2 md:space-y-7">
           <span className="inline-flex items-center gap-1 rounded-full border border-border bg-card/70 px-1.5 py-0.5 text-[8px] font-medium text-foreground/80 backdrop-blur md:gap-2 md:px-4 md:py-1.5 md:text-xs">
             <Sparkles className="h-3 w-3 text-primary md:h-3.5 md:w-3.5" />
-            Nail-студия в Смоленске · {brand.address}
+            Маникюр в Смоленске · {brand.address}
           </span>
 
           <h1 className="font-display text-[1.5rem] leading-[1.01] text-foreground sm:text-5xl lg:text-6xl">
@@ -22,14 +23,14 @@ export function Hero() {
           </h1>
 
           <p className="max-w-xl text-[10.5px] leading-snug text-muted-foreground md:text-lg md:leading-relaxed">
-            Привет, я Изабелла - nail-мастер в Смоленске 💖 Люблю чистый
+            Привет, я Изабелла — мастер маникюра в Смоленске 💖 Люблю чистый
             маникюр, аккуратную форму и дизайн без перегруза. Качественные
             материалы, стерильность и внимание к деталям - чтобы результат
             выглядел красиво и носился с комфортом.
           </p>
 
           <div className="flex flex-wrap items-center gap-1 md:gap-3">
-            <a href={brand.bookingUrl} data-cta="hero-booking"
+            <a href={brand.bookingUrl} data-cta="booking"
                className="inline-flex items-center justify-center rounded-full bg-primary px-2.5 py-1.5 text-[11px] font-medium text-primary-foreground shadow-elegant md:text-sm transition-opacity hover:opacity-90 md:px-7 md:py-3.5">
               Записаться онлайн
             </a>
@@ -38,6 +39,8 @@ export function Hero() {
               Посмотреть услуги
             </a>
             <a href={brand.telegram} target="_blank" rel="noreferrer noopener"
+               data-cta="telegram"
+               onClick={() => trackGoal("telegram_click")}
                className="inline-flex items-center gap-1 rounded-full px-1.5 py-1 text-[11px] font-medium text-primary hover:underline md:gap-2 md:px-4 md:py-3 md:text-sm">
               <Send className="h-3.5 w-3.5 md:h-4 md:w-4" /> Написать в Telegram
             </a>
@@ -61,7 +64,7 @@ export function Hero() {
         {/* Visual collage */}
         <div className="relative mx-auto aspect-[4/5] w-full max-w-[9.75rem] md:max-w-md lg:max-w-none">
           <div className="absolute inset-0 overflow-hidden rounded-2xl shadow-elegant rotate-2 md:rounded-[2rem]">
-            <img src={heroImg} alt="Аккуратный маникюр от Izabella Nails в Смоленске"
+            <img src={heroImg} alt="Маникюр в Смоленске от Izabella Nails"
                  width={1080} height={1920}
                  className="h-full w-full object-cover" />
           </div>

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { trackGoal } from "@/components/YandexMetrika";
 import hero1 from "@/assets/portfolio-new-8.jpg";
 import hero3 from "@/assets/portfolio-new-2.jpg";
 import hero4 from "@/assets/real-work-2.jpg";
@@ -12,12 +13,12 @@ function getVisibleWorks<T>(items: T[], start: number, count: number) {
 }
 
 const works = [
-  { src: hero1, caption: "Мраморный almond в молочных тонах", alt: "Молочный almond с мраморным дизайном" },
-  { src: hero3, caption: "Нежный квадрат с сияющим френчем", alt: "Нежный квадратный маникюр с полупрозрачным френчем" },
-  { src: hero4, caption: "Френч с акцентным дизайном", alt: "Френч с акцентным дизайном" },
-  { src: hero5, caption: "Бордовый glass-эффект с розами", alt: "Бордовый маникюр с прозрачным эффектом и розами" },
-  { src: hero6, caption: "Белый дизайн со звёздами", alt: "Белый маникюр с синими звёздами" },
-  { src: extra8, caption: "Молочный объёмный дизайн", alt: "Молочный маникюр с объёмным дизайном" },
+  { src: hero1, caption: "Мраморный almond в молочных тонах", alt: "Молочный маникюр от мастера Изабеллы" },
+  { src: hero3, caption: "Нежный квадрат с сияющим френчем", alt: "Французский маникюр в Смоленске" },
+  { src: hero4, caption: "Френч с акцентным дизайном", alt: "Дизайн ногтей в Смоленске" },
+  { src: hero5, caption: "Бордовый glass-эффект с розами", alt: "Маникюр с покрытием гель-лаком в Смоленске" },
+  { src: hero6, caption: "Белый дизайн со звёздами", alt: "Дизайн ногтей в Смоленске от Izabella Nails" },
+  { src: extra8, caption: "Молочный объёмный дизайн", alt: "Наращивание ногтей в Смоленске" },
 ];
 
 export function Portfolio() {
@@ -34,6 +35,7 @@ export function Portfolio() {
   };
 
   const handleWorkClick = (index: number) => {
+    trackGoal("portfolio_open", { work_index: index + 1, work_name: works[index]?.caption });
     setActiveIndex(index);
   };
 
@@ -83,6 +85,7 @@ export function Portfolio() {
                 key={w.index}
                 type="button"
                 onClick={() => handleWorkClick(w.index)}
+                data-cta="portfolio"
                 className="group relative aspect-[3/4] overflow-hidden rounded-xl bg-muted md:rounded-[1.25rem] shadow-card focus:outline-none focus:ring-2 focus:ring-ring"
               >
                 <img

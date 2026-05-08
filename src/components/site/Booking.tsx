@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { Send, CalendarCheck, Check, X, ChevronLeft, Loader2, MapPin } from "lucide-react";
 import { brand } from "@/data/brand";
+import { trackGoal } from "@/components/YandexMetrika";
 
 const serviceOptions = [
   {
@@ -47,7 +48,7 @@ const serviceOptions = [
   },
 ] as const;
 
-const bookingTriggers = new Set(["hero-booking", "booking-online", "header-booking", "service-book"]);
+const bookingTriggers = new Set(["booking", "booking-online", "header-booking", "hero-booking", "service-book"]);
 
 type ServiceId = (typeof serviceOptions)[number]["id"];
 type Step = 1 | 2 | 3;
@@ -211,8 +212,20 @@ export function Booking() {
       const cta = anchor.getAttribute("data-cta") || "";
       const href = anchor.getAttribute("href") || "";
       const serviceTriggerId = anchor.getAttribute("data-service-id") as ServiceId | null;
+      const serviceName = anchor.getAttribute("data-service-name") || undefined;
+      const price = anchor.getAttribute("data-service-price") || undefined;
 
       if (!bookingTriggers.has(cta) && href !== brand.bookingUrl) return;
+
+      trackGoal("booking_click");
+      trackGoal("dikidi_open");
+      if (serviceTriggerId || serviceName) {
+        trackGoal("service_click", {
+          service_id: serviceTriggerId || undefined,
+          service_name: serviceName,
+          price,
+        });
+      }
 
       event.preventDefault();
       setSuccessMessage("");
@@ -548,7 +561,7 @@ export function Booking() {
             <div className="mb-5 flex flex-wrap justify-center gap-2 md:mb-10 md:gap-3">
               <a
                 href={brand.bookingUrl}
-                data-cta="booking-online"
+                data-cta="booking"
                 className="inline-flex items-center gap-2 rounded-full bg-primary px-3 py-2 text-xs font-medium text-primary-foreground md:text-sm shadow-soft hover:opacity-90 md:px-7 md:py-3.5"
               >
                 <CalendarCheck className="h-4 w-4" /> Записаться онлайн
@@ -557,7 +570,8 @@ export function Booking() {
                 href={brand.telegram}
                 target="_blank"
                 rel="noreferrer noopener"
-                data-cta="booking-telegram"
+                data-cta="telegram"
+                onClick={() => trackGoal("telegram_click")}
                 className="inline-flex items-center gap-2 rounded-full border border-foreground/15 bg-background px-3 py-2 text-xs font-medium text-foreground md:text-sm hover:bg-secondary md:px-7 md:py-3.5"
               >
                 <Send className="h-4 w-4" /> Написать в Telegram
@@ -566,7 +580,8 @@ export function Booking() {
                 href={brand.vk}
                 target="_blank"
                 rel="noreferrer noopener"
-                data-cta="booking-vk"
+                data-cta="vk"
+                onClick={() => trackGoal("vk_click")}
                 className="inline-flex items-center gap-2 rounded-full border border-foreground/15 bg-background px-3 py-2 text-xs font-medium text-foreground md:text-sm hover:bg-secondary md:px-7 md:py-3.5"
               >
                 <span className="font-bold text-xs">VK</span> Написать в ВКонтакте
@@ -578,10 +593,33 @@ export function Booking() {
               {brand.city}, {brand.address}
             </div>
 
+            <div className="mt-5 rounded-2xl border border-border bg-background/80 p-4 text-left md:mt-8 md:p-6">
+              <h3 className="font-display text-xl text-foreground md:text-2xl">
+                Маникюр в Смоленске на ул. 25 Сентября
+              </h3>
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground md:text-base">
+                Izabella Nails — место для аккуратного маникюра в Смоленске на ул. 25 Сентября, 16.
+                Можно записаться на классический маникюр, покрытие гель-лаком, укрепление,
+                наращивание и дизайн ногтей. Удобно добраться из Промышленного района,
+                Медгородка, центра Смоленска и соседних районов.
+              </p>
+              <div className="mt-4 flex flex-wrap items-center gap-2 rounded-2xl bg-rose-soft/70 px-4 py-3 text-sm text-foreground">
+                <span className="font-medium">Для новых клиентов</span>
+                <span className="text-muted-foreground">можно уточнить актуальный бонус при записи.</span>
+                <a
+                  href={brand.bookingUrl}
+                  data-cta="booking"
+                  className="ml-0 inline-flex rounded-full bg-primary px-4 py-2 text-xs font-medium text-primary-foreground hover:opacity-90 md:ml-auto"
+                >
+                  Записаться
+                </a>
+              </div>
+            </div>
+
             <div className="mt-4 overflow-hidden rounded-[1.5rem] border border-border bg-background text-left shadow-card md:mt-10">
               <div className="border-b border-border/70 px-4 py-3 md:px-6 md:py-5">
                 <div className="text-sm font-semibold text-foreground">Как добраться</div>
-                <div className="text-sm text-muted-foreground mt-1">{brand.address}</div>
+                <div className="text-sm text-muted-foreground mt-1">Смоленск, ул. 25 Сентября, 16</div>
               </div>
               <iframe
                 title="Карта Izabella Nails"
@@ -595,12 +633,18 @@ export function Booking() {
                   href="https://yandex.ru/maps/?ll=32.0657229%2C54.7656936&mode=whatshere&whatshere%5Bpoint%5D=32.0657229%2C54.7656936&whatshere%5Bzoom%5D=17&z=17"
                   target="_blank"
                   rel="noreferrer noopener"
+                  data-cta="map"
+                  onClick={() => {
+                    trackGoal("map_click");
+                    trackGoal("route_click");
+                  }}
                   className="inline-flex items-center gap-2 rounded-full border border-foreground/15 bg-card px-4 py-2 text-sm font-medium text-foreground hover:bg-secondary md:px-5 md:py-2.5"
                 >
                   Открыть в Яндекс Картах
                 </a>
                 <a
                   href={brand.bookingUrl}
+                  data-cta="booking"
                   className="inline-flex items-center gap-2 rounded-full border border-foreground/15 bg-card px-4 py-2 text-sm font-medium text-foreground hover:bg-secondary md:px-5 md:py-2.5"
                 >
                   Перейти к записи

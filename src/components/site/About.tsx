@@ -8,7 +8,7 @@ export function About() {
       <div className="mx-auto grid max-w-7xl items-center gap-8 px-4 md:px-6 lg:grid-cols-2 lg:gap-16">
         <div className="relative">
           <div className="aspect-[4/5] rounded-[2rem] overflow-hidden shadow-elegant">
-            <img src={aboutImg} alt="Изабелла - мастер маникюра в Смоленске"
+            <img src={aboutImg} alt="Маникюр в Смоленске от мастера Изабеллы"
                  width={1200} height={1500} loading="lazy"
                  className="h-full w-full object-cover" />
           </div>
@@ -54,6 +54,7 @@ export function About() {
           </div>
 
           <a href={brand.bookingUrl}
+             data-cta="booking"
              className="mt-6 inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground hover:opacity-90 md:mt-8 md:px-6 md:py-3">
             <Sparkles className="h-4 w-4" /> Записаться онлайн
           </a>

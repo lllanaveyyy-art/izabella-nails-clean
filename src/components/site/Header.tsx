@@ -1,5 +1,6 @@
 import { Send } from "lucide-react";
 import { brand } from "@/data/brand";
+import { trackGoal } from "@/components/YandexMetrika";
 
 export function Header() {
   return (
@@ -25,16 +26,20 @@ export function Header() {
         <div className="flex items-center gap-2">
           <a href={brand.telegram} target="_blank" rel="noreferrer noopener"
              aria-label="Telegram"
+             data-cta="telegram"
+             onClick={() => trackGoal("telegram_click")}
              className="hidden sm:inline-flex h-9 w-9 items-center justify-center rounded-full border border-border hover:bg-rose-soft transition-colors">
             <Send className="h-4 w-4" />
           </a>
           <a href={brand.vk} target="_blank" rel="noreferrer noopener"
              aria-label="VK"
+             data-cta="vk"
+             onClick={() => trackGoal("vk_click")}
              className="hidden sm:inline-flex h-9 w-9 items-center justify-center rounded-full border border-border hover:bg-rose-soft transition-colors text-xs font-semibold">
             VK
           </a>
           <a href={brand.bookingUrl}
-             data-cta="header-booking"
+             data-cta="booking"
              className="inline-flex items-center rounded-full bg-primary px-4 py-2 text-xs font-medium text-primary-foreground shadow-soft transition-opacity hover:opacity-90 md:px-5 md:py-2.5 md:text-sm">
             Записаться
           </a>

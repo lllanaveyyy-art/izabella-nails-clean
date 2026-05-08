@@ -1,5 +1,6 @@
 import { MapPin, Send } from "lucide-react";
 import { brand } from "@/data/brand";
+import { trackGoal } from "@/components/YandexMetrika";
 
 export function TopBar() {
   return (
@@ -13,14 +14,18 @@ export function TopBar() {
         </div>
         <div className="flex items-center gap-4">
           <a href={brand.telegram} target="_blank" rel="noreferrer noopener"
+             data-cta="telegram"
+             onClick={() => trackGoal("telegram_click")}
              className="flex items-center gap-1.5 hover:text-primary transition-colors">
             <Send className="h-3.5 w-3.5" /> Telegram
           </a>
           <a href={brand.vk} target="_blank" rel="noreferrer noopener"
+             data-cta="vk"
+             onClick={() => trackGoal("vk_click")}
              className="hover:text-primary transition-colors">
             VK
           </a>
-          <a href={brand.bookingUrl} data-cta="booking-online" className="text-primary font-medium hover:underline">
+          <a href={brand.bookingUrl} data-cta="booking" className="text-primary font-medium hover:underline">
             Записаться онлайн →
           </a>
         </div>

@@ -1,5 +1,6 @@
 import { MapPin, Send } from "lucide-react";
 import { brand } from "@/data/brand";
+import { trackGoal } from "@/components/YandexMetrika";
 
 export function Footer() {
   return (
@@ -38,18 +39,23 @@ export function Footer() {
             </li>
             <li>
               <a href={brand.telegram} target="_blank" rel="noreferrer noopener"
+                 data-cta="telegram"
+                 onClick={() => trackGoal("telegram_click")}
                  className="inline-flex items-center gap-2 hover:text-background transition-colors">
                 <Send className="h-4 w-4" /> Telegram: @izabellanails
               </a>
             </li>
             <li>
               <a href={brand.vk} target="_blank" rel="noreferrer noopener"
+                 data-cta="vk"
+                 onClick={() => trackGoal("vk_click")}
                  className="inline-flex items-center gap-2 hover:text-background transition-colors">
                 <span className="font-bold text-xs">VK</span> vk.ru/nytiiiii
               </a>
             </li>
             <li>
               <a href={brand.bookingUrl}
+                 data-cta="booking"
                  className="inline-flex items-center gap-2 hover:text-background transition-colors">
                 Онлайн-запись
               </a>
@@ -57,6 +63,7 @@ export function Footer() {
           </ul>
 
           <a href={brand.bookingUrl}
+             data-cta="booking"
              className="mt-3 inline-flex items-center rounded-full bg-background px-3 py-2 text-xs md:text-sm font-medium text-foreground hover:opacity-90 md:mt-6 md:px-5 md:py-2.5">
             Записаться онлайн
           </a>

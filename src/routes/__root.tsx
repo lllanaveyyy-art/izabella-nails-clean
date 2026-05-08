@@ -30,26 +30,37 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Izabella Nails - Маникюр в Смоленске" },
-      { name: "description", content: "Izabella Nails Studio: a premium website for a nail master in Smolensk." },
-      { name: "author", content: "Lovable" },
+      { title: "Izabella Nails — маникюр в Смоленске на ул. 25 Сентября" },
+      {
+        name: "description",
+        content:
+          "Маникюр в Смоленске у Изабеллы: гель-лак, укрепление, наращивание и дизайн ногтей. Адрес: ул. 25 Сентября, 16. Онлайн-запись на удобное время.",
+      },
+      { name: "robots", content: "index,follow" },
       { name: "referrer", content: "strict-origin-when-cross-origin" },
       {
         httpEquiv: "Content-Security-Policy",
         content:
           "default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; connect-src 'self' https:; font-src 'self' data:; frame-src https://yandex.ru https://*.yandex.ru; base-uri 'self'; form-action 'self'; object-src 'none'",
       },
-      { property: "og:title", content: "Izabella Nails | Маникюр | Смоленск" },
-      { property: "og:description", content: "Izabella Nails Studio: a premium website for a nail master in Smolensk." },
+      { property: "og:title", content: "Izabella Nails — маникюр в Смоленске на ул. 25 Сентября" },
+      {
+        property: "og:description",
+        content:
+          "Маникюр в Смоленске у Изабеллы: гель-лак, укрепление, наращивание и дизайн ногтей. Адрес: ул. 25 Сентября, 16. Онлайн-запись на удобное время.",
+      },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://izabellanails.vercel.app/" },
       { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
-      { name: "twitter:title", content: "Izabella Nails | Маникюр | Смоленск" },
-      { name: "twitter:description", content: "Izabella Nails Studio: a premium website for a nail master in Smolensk." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/a77c2631-b9f8-43bd-83c4-939c21a4304c/id-preview-678c6ccf--8c82ff9d-3117-4ceb-a7ec-f4713c855235.lovable.app-1777300962371.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/a77c2631-b9f8-43bd-83c4-939c21a4304c/id-preview-678c6ccf--8c82ff9d-3117-4ceb-a7ec-f4713c855235.lovable.app-1777300962371.png" },
+      { name: "twitter:title", content: "Izabella Nails — маникюр в Смоленске на ул. 25 Сентября" },
+      {
+        name: "twitter:description",
+        content:
+          "Маникюр в Смоленске: покрытие гель-лаком, укрепление, наращивание и дизайн ногтей. Izabella Nails, ул. 25 Сентября, 16.",
+      },
     ],
     links: [
+      { rel: "canonical", href: "https://izabellanails.vercel.app/" },
       {
         rel: "stylesheet",
         href: appCss,
@@ -67,7 +78,7 @@ export const Route = createRootRoute({
 
 function RootShell({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="ru">
       <head>
         <HeadContent />
       </head>

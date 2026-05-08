@@ -22,6 +22,7 @@ export function Services() {
             <article
               key={s.id}
               data-service-id={s.id}
+              data-service-name={s.name}
               data-service-duration={s.durationMinutes}
               className="group relative flex h-full min-h-[140px] flex-col rounded-xl border border-border bg-card p-2.5 transition-all duration-300 hover:-translate-y-1 hover:shadow-elegant md:min-h-0 md:rounded-3xl md:p-7"
             >
@@ -50,8 +51,10 @@ export function Services() {
                 </div>
                 <a
                   href={brand.bookingUrl}
-                  data-cta="service-book"
+                  data-cta="booking"
                   data-service-id={s.id}
+                  data-service-name={s.name}
+                  data-service-price={s.price}
                   className="inline-flex shrink-0 items-center gap-1 whitespace-nowrap rounded-full border border-primary/15 bg-rose-soft/70 px-1.5 py-1 text-[10px] font-medium text-primary transition-all hover:bg-rose-soft md:gap-1.5 md:text-sm md:hover:gap-2.5"
                 >
                   Записаться
