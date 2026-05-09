@@ -4,7 +4,7 @@ import { brand } from "@/data/brand";
 
 export function Hero() {
   const visual = (
-    <div className="relative mx-auto w-full max-w-[10.25rem] overflow-visible md:max-w-[22rem] lg:max-w-[25rem] xl:max-w-[27rem]">
+    <div className="relative mx-auto w-full max-w-[9.5rem] overflow-visible md:max-w-[22rem] lg:max-w-[25rem] xl:max-w-[27rem]">
       <div className="relative aspect-[4/5] overflow-hidden rounded-[1.75rem] shadow-elegant md:rotate-2 md:rounded-[2rem]">
         <img
           src={heroImg}
@@ -85,7 +85,17 @@ export function Hero() {
             </a>
           </div>
 
-          <div className="mt-4 text-[9px] font-medium leading-snug text-foreground/75 md:mt-9 md:text-sm">
+          <div className="mt-4 flex items-start gap-1.5 text-[9px] font-medium leading-snug text-foreground/75 md:hidden">
+            <span className="shrink-0">{brand.rating.toFixed(1)} ⭐</span>
+            <span className="shrink-0 text-foreground/25">|</span>
+            <span className="shrink-0">{brand.reviewsCount} отзывов</span>
+            <span className="shrink-0 text-foreground/25">|</span>
+            <span className="leading-snug">
+              <span className="block">ул. 25</span>
+              <span className="block">Сентября, 16</span>
+            </span>
+          </div>
+          <div className="mt-9 hidden text-sm font-medium leading-snug text-foreground/75 md:block">
             {brand.rating.toFixed(1)} ⭐ · {brand.reviewsCount} отзывов · ул. 25
             Сентября, 16
           </div>
