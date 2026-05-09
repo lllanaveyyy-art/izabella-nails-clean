@@ -77,8 +77,8 @@ export function Hero() {
             <span className="italic text-gradient-gold">от Изабеллы</span>
           </h1>
 
-          <div className="mt-3 grid grid-cols-[0.88fr_1.12fr] items-start gap-2 md:mt-0 md:block">
-            <div className="space-y-2 md:space-y-7">
+          <div className="mt-4 grid grid-cols-[0.88fr_1.12fr] items-start gap-2 md:mt-0 md:block">
+            <div className="space-y-4 md:space-y-7">
               <p className="max-w-xl text-[10px] leading-snug text-muted-foreground md:text-lg md:leading-relaxed">
                 <span className="block">
                   Привет, я Изабелла - мастер маникюра в Смоленске 💖

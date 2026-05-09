@@ -27,6 +27,20 @@ export function About() {
     </div>
   );
 
+  const mobileStatsBlock = (
+    <div className="grid grid-cols-2 gap-1">
+      {stats.slice(0, 2).map((s) => (
+        <div
+          key={s.v}
+          className="rounded-xl border border-border bg-cream/60 p-1.5 text-center"
+        >
+          <div className="font-display text-sm text-foreground">{s.k}</div>
+          <div className="mt-0.5 text-[8px] text-muted-foreground">{s.v}</div>
+        </div>
+      ))}
+    </div>
+  );
+
   const bookingButton = (
     <a
       href={brand.bookingUrl}
@@ -39,7 +53,7 @@ export function About() {
 
   return (
     <section id="about" className="bg-background py-6 md:py-16">
-      <div className="mx-auto grid max-w-7xl grid-cols-[0.48fr_0.52fr] items-start gap-3 px-3 md:grid-cols-1 md:gap-8 md:px-6 lg:grid-cols-2 lg:items-center lg:gap-16">
+      <div className="mx-auto grid max-w-7xl grid-cols-[0.52fr_0.48fr] items-start gap-3 px-3 md:grid-cols-1 md:gap-8 md:px-6 lg:grid-cols-2 lg:items-center lg:gap-16">
         <div className="relative">
           <div className="aspect-[4/5] overflow-hidden rounded-2xl shadow-elegant md:rounded-[2rem]">
             <img
@@ -64,32 +78,39 @@ export function About() {
           </div>
 
           <div className="mt-2 space-y-2 md:hidden">
-            {statsBlock}
+            {mobileStatsBlock}
             {bookingButton}
           </div>
         </div>
 
-        <div>
+        <div className="text-center md:text-left">
           <span className="text-[10px] font-medium uppercase tracking-[0.2em] text-primary md:text-xs md:tracking-[0.25em]">
             О мастере
           </span>
-          <h2 className="mt-1 mb-2 font-display text-[1.35rem] leading-tight md:mt-3 md:mb-6 md:text-5xl">
+          <h2 className="mt-1 mb-2 font-display text-[1.18rem] leading-tight md:mt-3 md:mb-6 md:text-5xl">
             Немного <span className="italic text-gradient-gold">обо мне</span>
           </h2>
-          <div className="space-y-2 text-[11px] leading-snug text-foreground/85 md:space-y-4 md:text-base md:leading-relaxed">
-            <p>
-              Люблю чистый маникюр, аккуратную форму и дизайн, который выглядит
-              стильно не только на фото, но и в жизни.
+          <div className="text-[11px] leading-snug text-foreground/85 md:space-y-4 md:text-base md:leading-relaxed">
+            <p className="md:hidden">
+              Я подбираю форму, длину и покрытие под руки и образ клиента.
+              Работаю аккуратно, соблюдаю стерильность и слежу, чтобы маникюр
+              выглядел чисто не только на фото, но и в жизни.
             </p>
-            <p>
-              Работаю с качественными материалами, соблюдаю стерильность и
-              подбираю форму, длину и покрытие под твой образ жизни и вкус.
-            </p>
-            <p>
-              Можно выбрать как спокойный минимализм, так и более выразительный
-              дизайн - главное, чтобы результат был аккуратным и по-настоящему
-              твоим.
-            </p>
+            <div className="hidden space-y-4 md:block">
+              <p>
+                Люблю чистый маникюр, аккуратную форму и дизайн, который
+                выглядит стильно не только на фото, но и в жизни.
+              </p>
+              <p>
+                Работаю с качественными материалами, соблюдаю стерильность и
+                подбираю форму, длину и покрытие под твой образ жизни и вкус.
+              </p>
+              <p>
+                Можно выбрать как спокойный минимализм, так и более
+                выразительный дизайн - главное, чтобы результат был аккуратным и
+                по-настоящему твоим.
+              </p>
+            </div>
           </div>
 
           <div className="mt-8 hidden md:block">{statsBlock}</div>

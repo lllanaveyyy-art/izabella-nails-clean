@@ -10,6 +10,7 @@ const serviceOptions = [
     title: "Классический маникюр",
     price: "400 ₽",
     duration: "30 мин.",
+    description: "Обработка кутикулы и аккуратная форма без покрытия.",
   },
   {
     id: "men",
@@ -17,6 +18,7 @@ const serviceOptions = [
     title: "Мужской маникюр",
     price: "500 ₽",
     duration: "30 мин.",
+    description: "Чистая кутикула, форма и лёгкая полировка.",
   },
   {
     id: "gel",
@@ -24,6 +26,7 @@ const serviceOptions = [
     title: "Маникюр с покрытием гель-лаком",
     price: "850 ₽",
     duration: "1 ч 30 мин.",
+    description: "Маникюр и стойкое покрытие с глянцевым блеском.",
   },
   {
     id: "strengthening",
@@ -31,6 +34,7 @@ const serviceOptions = [
     title: "Укрепление гелем",
     price: "1 100 ₽",
     duration: "1 ч 15 мин.",
+    description: "Дополнительная прочность для натуральных ногтей.",
   },
   {
     id: "correction",
@@ -38,6 +42,7 @@ const serviceOptions = [
     title: "Коррекция наращённых ногтей",
     price: "1 300 ₽",
     duration: "1 ч 30 мин.",
+    description: "Обновление формы и покрытия на наращённых ногтях.",
   },
   {
     id: "extension",
@@ -45,6 +50,7 @@ const serviceOptions = [
     title: "Наращивание ногтей",
     price: "1 500 ₽",
     duration: "2 ч 30 мин.",
+    description: "Нужная длина и форма с прочным основанием.",
   },
 ] as const;
 
@@ -662,7 +668,7 @@ export function Booking() {
               </h3>
             </div>
 
-            <div className="flex-1 overflow-y-auto pb-[calc(env(safe-area-inset-bottom)+0.75rem)] md:h-auto md:max-h-[calc(90vh-120px)] md:pb-0">
+            <div className="flex-1 overflow-y-auto pb-[calc(env(safe-area-inset-bottom)+1rem)] md:h-auto md:max-h-[calc(90vh-120px)] md:pb-0">
 
             {message ? (
               <div className="mx-4 mt-4 rounded-2xl border border-primary/20 bg-rose-soft px-4 py-3 text-sm text-foreground md:mx-8 md:mt-6">
@@ -712,8 +718,8 @@ export function Booking() {
             ) : null}
 
             {step === 1 ? (
-              <div className="p-3 md:p-8">
-                <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
+              <div className="p-3 pb-0 md:p-8">
+                <div className="grid gap-2 pb-24 sm:grid-cols-2 md:pb-0 lg:grid-cols-3">
                   {serviceOptions.map((option) => {
                     const active = option.id === serviceId;
                     return (
@@ -730,7 +736,10 @@ export function Booking() {
                         <div className="flex items-start justify-between gap-3">
                           <div>
                             <div className="font-medium text-foreground leading-snug">{option.title}</div>
-                            <div className="mt-1 text-sm text-muted-foreground">{option.duration}</div>
+                            <div className="mt-1 text-xs leading-snug text-muted-foreground md:text-sm">
+                              {option.description}
+                            </div>
+                            <div className="mt-1 text-xs text-muted-foreground md:text-sm">{option.duration}</div>
                           </div>
                           {active ? <Check className="mt-0.5 h-4 w-4 text-primary" /> : null}
                         </div>
@@ -740,7 +749,7 @@ export function Booking() {
                   })}
                 </div>
 
-                <div className="sticky bottom-0 -mx-3 mt-3 flex justify-end border-t border-border/70 bg-card/95 px-3 pb-[calc(env(safe-area-inset-bottom)+0.75rem)] pt-2 backdrop-blur md:static md:mx-0 md:mt-6 md:border-0 md:bg-transparent md:p-0">
+                <div className="sticky bottom-0 -mx-3 mt-3 flex justify-end border-t border-border/70 bg-card px-3 pb-[calc(env(safe-area-inset-bottom)+1rem)] pt-2 backdrop-blur md:static md:mx-0 md:mt-6 md:border-0 md:bg-transparent md:p-0">
                   <button
                     type="button"
                     onClick={openDateTimeStep}
@@ -855,7 +864,7 @@ export function Booking() {
                   </div>
                 </div>
 
-                <div className="sticky bottom-0 -mx-3 mt-3 flex flex-col-reverse gap-2.5 border-t border-border/70 bg-card/95 px-3 pb-[calc(env(safe-area-inset-bottom)+0.75rem)] pt-2 backdrop-blur sm:flex-row sm:flex-wrap sm:justify-between md:static md:mx-0 md:mt-6 md:border-0 md:bg-transparent md:p-0 md:gap-3">
+                <div className="sticky bottom-0 -mx-3 mt-3 flex flex-col-reverse gap-2.5 border-t border-border/70 bg-card px-3 pb-[calc(env(safe-area-inset-bottom)+1rem)] pt-2 backdrop-blur sm:flex-row sm:flex-wrap sm:justify-between md:static md:mx-0 md:mt-6 md:border-0 md:bg-transparent md:p-0 md:gap-3">
                   <button
                     type="button"
                     onClick={() => setStep(1)}
@@ -953,7 +962,7 @@ export function Booking() {
                   </div>
                 ) : null}
 
-                <div className="sticky bottom-0 -mx-3 mt-3 flex flex-wrap justify-between gap-2.5 border-t border-border/70 bg-card/95 px-3 pb-[calc(env(safe-area-inset-bottom)+0.75rem)] pt-2 backdrop-blur md:static md:mx-0 md:mt-6 md:border-0 md:bg-transparent md:p-0 md:gap-3">
+                <div className="sticky bottom-0 -mx-3 mt-3 flex flex-wrap justify-between gap-2.5 border-t border-border/70 bg-card px-3 pb-[calc(env(safe-area-inset-bottom)+1rem)] pt-2 backdrop-blur md:static md:mx-0 md:mt-6 md:border-0 md:bg-transparent md:p-0 md:gap-3">
                   <button
                     type="button"
                     onClick={() => setStep(2)}
