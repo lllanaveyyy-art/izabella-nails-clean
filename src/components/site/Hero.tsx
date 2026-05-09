@@ -23,10 +23,12 @@ export function Hero() {
           </h1>
 
           <p className="max-w-xl text-[10.5px] leading-snug text-muted-foreground md:text-lg md:leading-relaxed">
-            Привет, я Изабелла — мастер маникюра в Смоленске 💖 Люблю чистый
-            маникюр, аккуратную форму и дизайн без перегруза. Качественные
-            материалы, стерильность и внимание к деталям - чтобы результат
-            выглядел красиво и носился с комфортом.
+            <span className="block">Привет, я Изабелла — мастер маникюра в Смоленске.</span>
+            <span className="mt-2 block">
+              Делаю аккуратный маникюр, ровную форму и красивые дизайны: от нюда до
+              ярких акцентов.
+            </span>
+            <span className="mt-2 block">Работаю стерильно и на качественных материалах.</span>
           </p>
 
           <div className="flex flex-wrap items-center gap-1 md:gap-3">
