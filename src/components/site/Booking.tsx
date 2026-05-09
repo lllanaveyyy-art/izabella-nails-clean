@@ -633,7 +633,7 @@ export function Booking() {
           onClick={closeModal}
         >
           <div
-            className="relative h-[100dvh] w-full overflow-hidden rounded-none border border-border bg-card shadow-elegant md:h-auto md:max-h-[90vh] md:max-w-5xl md:rounded-[2rem]"
+            className="relative flex h-[100dvh] w-full flex-col overflow-hidden rounded-none border border-border bg-card shadow-elegant md:h-auto md:max-h-[90vh] md:max-w-5xl md:rounded-[2rem]"
             onClick={(event) => event.stopPropagation()}
           >
             <button
@@ -645,7 +645,7 @@ export function Booking() {
               <X className="h-4 w-4" />
             </button>
 
-            <div className="border-b border-border/70 px-3 pb-2 pt-9 md:p-8">
+            <div className="shrink-0 border-b border-border/70 px-3 pb-2 pt-9 md:p-8">
               {!successMessage ? (
                 <div className="mb-3 text-[11px] font-medium uppercase tracking-[0.25em] text-primary">
                   Онлайн-запись
@@ -660,12 +660,9 @@ export function Booking() {
                       ? <>Шаг 2: <span className="italic text-gradient-gold">дата и время</span></>
                       : <>Шаг 3: <span className="italic text-gradient-gold">подтверждение</span></>}
               </h3>
-              <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted-foreground md:mt-3 md:text-base">
-                {!successMessage && step === 1 && "Сначала выбери услугу."}
-              </p>
             </div>
 
-            <div className="h-[calc(100dvh-92px)] overflow-y-auto md:h-auto md:max-h-[calc(90vh-120px)]">
+            <div className="flex-1 overflow-y-auto pb-[calc(env(safe-area-inset-bottom)+0.75rem)] md:h-auto md:max-h-[calc(90vh-120px)] md:pb-0">
 
             {message ? (
               <div className="mx-4 mt-4 rounded-2xl border border-primary/20 bg-rose-soft px-4 py-3 text-sm text-foreground md:mx-8 md:mt-6">
@@ -743,7 +740,7 @@ export function Booking() {
                   })}
                 </div>
 
-                <div className="mt-4 flex justify-end md:mt-6">
+                <div className="sticky bottom-0 -mx-3 mt-3 flex justify-end border-t border-border/70 bg-card/95 px-3 pb-[calc(env(safe-area-inset-bottom)+0.75rem)] pt-2 backdrop-blur md:static md:mx-0 md:mt-6 md:border-0 md:bg-transparent md:p-0">
                   <button
                     type="button"
                     onClick={openDateTimeStep}
@@ -858,7 +855,7 @@ export function Booking() {
                   </div>
                 </div>
 
-                <div className="mt-4 flex flex-col-reverse gap-2.5 sm:flex-row sm:flex-wrap sm:justify-between md:mt-6 md:gap-3">
+                <div className="sticky bottom-0 -mx-3 mt-3 flex flex-col-reverse gap-2.5 border-t border-border/70 bg-card/95 px-3 pb-[calc(env(safe-area-inset-bottom)+0.75rem)] pt-2 backdrop-blur sm:flex-row sm:flex-wrap sm:justify-between md:static md:mx-0 md:mt-6 md:border-0 md:bg-transparent md:p-0 md:gap-3">
                   <button
                     type="button"
                     onClick={() => setStep(1)}
@@ -956,7 +953,7 @@ export function Booking() {
                   </div>
                 ) : null}
 
-                <div className="mt-4 flex flex-wrap justify-between gap-2.5 md:mt-6 md:gap-3">
+                <div className="sticky bottom-0 -mx-3 mt-3 flex flex-wrap justify-between gap-2.5 border-t border-border/70 bg-card/95 px-3 pb-[calc(env(safe-area-inset-bottom)+0.75rem)] pt-2 backdrop-blur md:static md:mx-0 md:mt-6 md:border-0 md:bg-transparent md:p-0 md:gap-3">
                   <button
                     type="button"
                     onClick={() => setStep(2)}
