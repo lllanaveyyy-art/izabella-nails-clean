@@ -83,15 +83,15 @@ export function Hero() {
 
           <div className="mt-5 grid grid-cols-[0.78fr_1.22fr] items-stretch gap-2 md:mt-0 md:block">
             <div className="flex h-full min-h-[17.75rem] flex-col gap-5 md:block md:min-h-0 md:space-y-7">
-              <p className="max-w-xl pt-1 text-[10px] leading-snug text-muted-foreground md:pt-0 md:text-lg md:leading-relaxed">
-                <span className="block">Маникюр в Смоленске.</span>
-                <span className="mt-2 block">
-                  Аккуратный маникюр, покрытие и дизайн.
-                </span>
-                <span className="mt-2 block">
-                  Стерильно, удобно, онлайн-запись.
-                </span>
-              </p>
+              <div className="max-w-xl pt-1 md:pt-0">
+                <p className="text-[11px] font-semibold leading-tight text-foreground md:text-xl">
+                  Маникюр в Смоленске
+                </p>
+                <div className="mt-2 space-y-1 text-[9.5px] font-medium leading-tight text-muted-foreground md:mt-3 md:space-y-1.5 md:text-base md:leading-snug">
+                  <p>Аккуратная форма · покрытие · дизайн</p>
+                  <p>Стерильно · удобно · онлайн-запись</p>
+                </div>
+              </div>
 
               <div className="mt-auto flex flex-col items-start gap-1 md:mt-0 md:flex-row md:flex-wrap md:items-center md:gap-3">
                 <a
