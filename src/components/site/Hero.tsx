@@ -4,8 +4,8 @@ import { brand } from "@/data/brand";
 
 export function Hero() {
   const visual = (
-    <div className="relative mx-auto w-full max-w-[17rem] md:max-w-md lg:max-w-none">
-      <div className="relative aspect-[4/5] overflow-hidden rounded-[1.75rem] shadow-elegant md:rounded-[2rem]">
+    <div className="relative mx-auto w-full max-w-[17rem] md:max-w-[22rem] lg:max-w-[25rem] xl:max-w-[27rem]">
+      <div className="relative aspect-[4/5] overflow-hidden rounded-[1.75rem] shadow-elegant md:rotate-2 md:rounded-[2rem]">
         <img
           src={heroImg}
           alt="Маникюр в Смоленске от Izabella Nails"
@@ -14,13 +14,32 @@ export function Hero() {
           className="h-full w-full object-cover"
         />
 
-        <div className="absolute right-2 top-2 inline-flex items-center gap-1 rounded-full border border-white/70 bg-card/90 px-2 py-1 text-[9px] font-medium leading-none text-foreground shadow-card backdrop-blur md:right-4 md:top-4 md:gap-2 md:px-4 md:py-2 md:text-xs">
-          <Sparkles className="h-3 w-3 text-primary md:h-4 md:w-4" />
-          трендовые дизайны
+        <div className="absolute right-2 top-2 flex items-center gap-2 rounded-2xl border border-white/70 bg-card/95 px-3 py-2 shadow-card backdrop-blur md:right-4 md:top-4 md:px-4 md:py-3">
+          <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-gradient-rose md:h-8 md:w-8">
+            <Sparkles className="h-3 w-3 text-primary md:h-4 md:w-4" />
+          </div>
+          <div>
+            <div className="text-[8px] uppercase tracking-[0.18em] text-muted-foreground md:text-[10px]">
+              дизайны
+            </div>
+            <div className="text-[10px] font-semibold leading-tight text-foreground md:text-sm">
+              трендовые идеи
+            </div>
+          </div>
         </div>
 
-        <div className="absolute bottom-2 left-2 rounded-full border border-white/70 bg-card/90 px-2.5 py-1 text-[9px] font-medium leading-none text-foreground shadow-card backdrop-blur md:bottom-4 md:left-4 md:px-4 md:py-2 md:text-xs">
-          clean girl style
+        <div className="absolute bottom-2 left-2 flex items-center gap-2 rounded-2xl border border-white/70 bg-card/95 px-3 py-2 shadow-card backdrop-blur md:bottom-4 md:left-4 md:px-4 md:py-3">
+          <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-gradient-rose md:h-8 md:w-8">
+            <Sparkles className="h-3 w-3 text-primary md:h-4 md:w-4" />
+          </div>
+          <div>
+            <div className="text-[8px] uppercase tracking-[0.18em] text-muted-foreground md:text-[10px]">
+              style
+            </div>
+            <div className="text-[10px] font-semibold leading-tight text-foreground md:text-sm">
+              clean girl nails
+            </div>
+          </div>
         </div>
       </div>
     </div>

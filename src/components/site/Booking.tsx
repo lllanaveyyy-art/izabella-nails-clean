@@ -736,7 +736,7 @@ export function Booking() {
                         <div className="flex items-start justify-between gap-3">
                           <div>
                             <div className="font-medium text-foreground leading-snug">{option.title}</div>
-                            <div className="mt-1 overflow-hidden text-xs leading-snug text-muted-foreground [display:-webkit-box] [-webkit-box-orient:vertical] [-webkit-line-clamp:2] md:text-sm">
+                            <div className="mt-1 overflow-hidden text-xs leading-snug text-muted-foreground [display:-webkit-box] [-webkit-box-orient:vertical] [-webkit-line-clamp:2] md:hidden">
                               {option.description}
                             </div>
                           </div>
