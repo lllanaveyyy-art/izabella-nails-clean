@@ -24,7 +24,7 @@ export function Services() {
               data-service-id={s.id}
               data-service-name={s.name}
               data-service-duration={s.durationMinutes}
-              className="group relative flex h-full min-h-[140px] flex-col rounded-xl border border-border bg-card p-2.5 transition-all duration-300 hover:-translate-y-1 hover:shadow-elegant md:min-h-0 md:rounded-3xl md:p-7"
+              className="group relative flex h-full min-h-[158px] flex-col rounded-xl border border-border bg-card p-2.5 transition-all duration-300 hover:-translate-y-1 hover:shadow-elegant md:min-h-0 md:rounded-3xl md:p-7"
             >
               <div className="mb-1.5 flex items-start justify-between gap-1.5 md:mb-5 md:gap-3">
                 <span className="inline-flex items-center gap-1 rounded-full bg-secondary px-1 py-0.5 text-[8px] leading-none text-muted-foreground md:gap-1.5 md:px-3 md:py-1 md:text-xs">
@@ -38,7 +38,7 @@ export function Services() {
               <h3 className="mb-2 min-h-[2.65rem] font-display text-[15.5px] font-semibold leading-[1.08] text-foreground md:mb-3 md:min-h-0 md:text-2xl md:font-normal">
                 {s.name}
               </h3>
-              <p className="mb-4 hidden flex-1 text-sm leading-relaxed text-muted-foreground md:mb-6 md:block">
+              <p className="mb-3 flex-1 overflow-hidden text-[11px] leading-snug text-muted-foreground [display:-webkit-box] [-webkit-box-orient:vertical] [-webkit-line-clamp:2] md:mb-6 md:block md:text-sm md:leading-relaxed">
                 {s.description}
               </p>
 

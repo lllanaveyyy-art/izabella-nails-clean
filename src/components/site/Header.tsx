@@ -23,28 +23,36 @@ export function Header() {
           <a href="#contacts" className="hover:text-primary transition-colors">Контакты</a>
         </nav>
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-1.5 sm:gap-2">
           <a href={brand.telegram} target="_blank" rel="noreferrer noopener"
              aria-label="Telegram"
              data-cta="telegram"
              onClick={() => trackGoal("telegram_click")}
-             className="hidden sm:inline-flex h-9 w-9 items-center justify-center rounded-full border border-border hover:bg-rose-soft transition-colors">
-            <Send className="h-4 w-4" />
+             className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-border bg-card/70 transition-colors hover:bg-rose-soft sm:h-9 sm:w-9 sm:bg-transparent">
+            <Send className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
           </a>
           <a href={brand.vk} target="_blank" rel="noreferrer noopener"
              aria-label="VK"
              data-cta="vk"
              onClick={() => trackGoal("vk_click")}
-             className="hidden sm:inline-flex h-9 w-9 items-center justify-center rounded-full border border-border hover:bg-rose-soft transition-colors text-xs font-semibold">
+             className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-border bg-card/70 text-[10px] font-semibold transition-colors hover:bg-rose-soft sm:h-9 sm:w-9 sm:bg-transparent sm:text-xs">
             VK
           </a>
           <a href={brand.bookingUrl}
              data-cta="booking"
-             className="inline-flex items-center rounded-full bg-primary px-4 py-2 text-xs font-medium text-primary-foreground shadow-soft transition-opacity hover:opacity-90 md:px-5 md:py-2.5 md:text-sm">
+             className="inline-flex items-center rounded-full bg-primary px-3 py-2 text-xs font-medium text-primary-foreground shadow-soft transition-opacity hover:opacity-90 md:px-5 md:py-2.5 md:text-sm">
             Записаться
           </a>
         </div>
       </div>
+
+      <nav className="mx-auto flex max-w-7xl gap-1.5 overflow-x-auto whitespace-nowrap px-4 pb-2 text-[11px] text-foreground/75 [scrollbar-width:none] md:px-6 lg:hidden [&::-webkit-scrollbar]:hidden">
+        <a href="#services" className="rounded-full border border-border bg-card/60 px-3 py-1 transition-colors hover:text-primary">Услуги</a>
+        <a href="#portfolio" className="rounded-full border border-border bg-card/60 px-3 py-1 transition-colors hover:text-primary">Работы</a>
+        <a href="#reviews" className="rounded-full border border-border bg-card/60 px-3 py-1 transition-colors hover:text-primary">Отзывы</a>
+        <a href="#about" className="rounded-full border border-border bg-card/60 px-3 py-1 transition-colors hover:text-primary">О мастере</a>
+        <a href="#contacts" className="rounded-full border border-border bg-card/60 px-3 py-1 transition-colors hover:text-primary">Контакты</a>
+      </nav>
     </header>
   );
 }
