@@ -10,7 +10,8 @@
     "preview": "vite preview",
     "lint": "eslint .",
     "format": "prettier --write .",
-    "smoke:dist": "node scripts/smoke-check-dist.mjs"
+    "smoke:dist": "node scripts/smoke-check-dist.mjs",
+    "deploy:prod": "npm run build && npm run smoke:dist && cd dist && npx vercel deploy --prod --yes --scope romanpinskyy-4044s-projects"
   },
   "dependencies": {
     "@cloudflare/vite-plugin": "^1.25.5",

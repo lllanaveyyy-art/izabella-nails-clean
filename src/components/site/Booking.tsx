@@ -719,7 +719,7 @@ export function Booking() {
 
             {step === 1 ? (
               <div className="p-3 pb-0 md:p-8">
-                <div className="grid gap-2 pb-[calc(env(safe-area-inset-bottom)+9rem)] sm:grid-cols-2 md:pb-0 lg:grid-cols-3">
+                <div className="grid gap-2 pb-[calc(env(safe-area-inset-bottom)+9rem)] sm:grid-cols-2 md:pb-0 lg:grid-cols-2">
                   {serviceOptions.map((option) => {
                     const active = option.id === serviceId;
                     return (
@@ -733,9 +733,9 @@ export function Booking() {
                             : "border-border bg-background hover:border-primary/40 hover:bg-secondary/40"
                         }`}
                       >
-                        <div className="flex items-start justify-between gap-3">
+                        <div className="flex items-start justify-between gap-2">
                           <div className="min-w-0 flex-1">
-                            <div className="font-medium text-foreground leading-snug">{option.title}</div>
+                            <div className="whitespace-nowrap text-[12px] font-medium leading-snug text-foreground md:text-sm">{option.title}</div>
                             <div className="mt-1 overflow-hidden text-xs leading-snug text-muted-foreground [display:-webkit-box] [-webkit-box-orient:vertical] [-webkit-line-clamp:2] md:hidden">
                               {option.description}
                             </div>
@@ -750,6 +750,17 @@ export function Booking() {
                           </div>
                           <div className="flex w-5 shrink-0 justify-center pt-0.5">
                             {active ? <Check className="h-4 w-4 text-primary" /> : null}
+                          </div>
+                          <div className="flex w-[4.75rem] shrink-0 flex-col items-end gap-1">
+                            <span className="rounded-full border border-border bg-card px-1.5 py-0.5 text-[10px] leading-none text-muted-foreground">
+                              {option.duration}
+                            </span>
+                            <span className="rounded-full border border-primary/15 bg-rose-soft/70 px-1.5 py-0.5 font-display text-[13px] leading-none text-foreground">
+                              {option.price}
+                            </span>
+                            <span className="flex h-4 w-4 items-center justify-center">
+                              {active ? <Check className="h-4 w-4 text-primary" /> : null}
+                            </span>
                           </div>
                         </div>
                       </button>
