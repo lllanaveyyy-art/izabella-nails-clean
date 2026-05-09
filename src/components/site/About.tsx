@@ -28,7 +28,7 @@ export function About() {
   );
 
   const mobileStatsBlock = (
-    <div className="grid grid-cols-2 gap-1">
+    <div className="grid grid-cols-2 gap-2">
       {stats.slice(0, 2).map((s) => (
         <div
           key={s.v}
@@ -91,11 +91,6 @@ export function About() {
                 Смоленск · ул. 25-Сентября, 16
               </div>
             </div>
-
-            <div className="mt-2 space-y-2 md:hidden">
-              {mobileStatsBlock}
-              {bookingButton}
-            </div>
           </div>
 
           <div className="md:text-left">
@@ -138,6 +133,11 @@ export function About() {
             <div className="mt-8 hidden md:block">{statsBlock}</div>
             <div className="mt-8 hidden md:block">{bookingButton}</div>
           </div>
+        </div>
+
+        <div className="mx-auto mt-4 flex max-w-[17rem] flex-col items-center gap-2 md:hidden">
+          <div className="w-full">{mobileStatsBlock}</div>
+          {bookingButton}
         </div>
       </div>
     </section>

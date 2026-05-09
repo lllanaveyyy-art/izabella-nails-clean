@@ -5,47 +5,51 @@ import { trackGoal } from "@/components/YandexMetrika";
 
 export function Hero() {
   const visual = (
-    <div className="relative mx-auto aspect-[4/5] w-full max-w-[12.75rem] md:max-w-md lg:max-w-none">
-      <div className="absolute inset-0 overflow-hidden rounded-2xl shadow-elegant rotate-2 md:rounded-[2rem]">
-        <img
-          src={heroImg}
-          alt="Маникюр в Смоленске от Izabella Nails"
-          width={1080}
-          height={1920}
-          className="h-full w-full object-cover"
-        />
-      </div>
-      <div className="absolute -bottom-1 -left-1 rounded-lg border border-border bg-card/95 px-1.5 py-1 shadow-card backdrop-blur md:-bottom-6 md:-left-6 md:rounded-2xl md:px-5 md:py-4">
-        <div className="flex items-center gap-1 md:gap-3">
-          <div className="flex h-4.5 w-4.5 items-center justify-center rounded-full bg-gradient-rose md:h-10 md:w-10">
-            <Sparkles className="h-2.5 w-2.5 text-primary md:h-5 md:w-5" />
-          </div>
-          <div>
-            <div className="text-[8px] font-semibold leading-none md:text-sm">
-              Онлайн-запись
+    <div className="relative ml-auto flex h-full w-full max-w-[14rem] flex-col md:mx-auto md:block md:h-auto md:max-w-md lg:max-w-none">
+      <div className="relative aspect-[4/5] shrink-0">
+        <div className="absolute inset-0 overflow-hidden rounded-2xl shadow-elegant rotate-2 md:rounded-[2rem]">
+          <img
+            src={heroImg}
+            alt="Маникюр в Смоленске от Izabella Nails"
+            width={1080}
+            height={1920}
+            className="h-full w-full object-cover"
+          />
+        </div>
+        <div className="absolute -bottom-1 -left-1 rounded-lg border border-border bg-card/95 px-1.5 py-1 shadow-card backdrop-blur md:-bottom-6 md:-left-6 md:rounded-2xl md:px-5 md:py-4">
+          <div className="flex items-center gap-1 md:gap-3">
+            <div className="flex h-4.5 w-4.5 items-center justify-center rounded-full bg-gradient-rose md:h-10 md:w-10">
+              <Sparkles className="h-2.5 w-2.5 text-primary md:h-5 md:w-5" />
             </div>
-            <div className="mt-0.5 text-[6.5px] leading-none text-muted-foreground md:text-xs">
-              Удобное время · 24/7
+            <div>
+              <div className="text-[8px] font-semibold leading-none md:text-sm">
+                Онлайн-запись
+              </div>
+              <div className="mt-0.5 text-[6.5px] leading-none text-muted-foreground md:text-xs">
+                Удобное время · 24/7
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div className="absolute -right-0.5 -top-1.5 block rounded-lg border border-border bg-card/95 px-1.5 py-0.5 shadow-card backdrop-blur md:-right-4 md:-top-4 md:rounded-2xl md:px-4 md:py-3">
-        <div className="text-[6.5px] uppercase tracking-widest text-muted-foreground md:text-[11px]">
-          Онлайн
+        <div className="absolute -right-0.5 -top-1.5 block rounded-lg border border-border bg-card/95 px-1.5 py-0.5 shadow-card backdrop-blur md:-right-4 md:-top-4 md:rounded-2xl md:px-4 md:py-3">
+          <div className="text-[6.5px] uppercase tracking-widest text-muted-foreground md:text-[11px]">
+            Онлайн
+          </div>
+          <div className="text-[8px] font-semibold leading-none md:text-sm">
+            Запись открыта
+          </div>
         </div>
-        <div className="text-[8px] font-semibold leading-none md:text-sm">
-          Запись открыта
-        </div>
       </div>
-      <div className="absolute bottom-1 right-1 flex items-center gap-1 rounded-full border border-border bg-card/95 px-2 py-1 shadow-card backdrop-blur md:hidden">
-        <Star className="h-3 w-3 fill-gold text-gold" />
-        <span className="text-[11px] font-semibold leading-none text-foreground">
-          {brand.rating.toFixed(1)}
-        </span>
-        <span className="text-[10px] leading-none text-muted-foreground">
-          · {brand.reviewsCount} отзывов
-        </span>
+      <div className="mt-auto flex justify-end pt-2 md:hidden">
+        <div className="flex items-center gap-1 rounded-full border border-border bg-card/95 px-2 py-1 shadow-card backdrop-blur">
+          <Star className="h-3 w-3 fill-gold text-gold" />
+          <span className="text-[11px] font-semibold leading-none text-foreground">
+            {brand.rating.toFixed(1)}
+          </span>
+          <span className="text-[10px] leading-none text-muted-foreground">
+            · {brand.reviewsCount} отзывов
+          </span>
+        </div>
       </div>
     </div>
   );
@@ -60,7 +64,7 @@ export function Hero() {
         }}
       />
 
-      <div className="relative mx-auto max-w-7xl px-3 pb-10 pt-4 md:grid md:grid-cols-[1.08fr_0.92fr] md:items-center md:gap-10 md:px-6 md:py-24 lg:grid-cols-[1.1fr_1fr] lg:gap-16">
+      <div className="relative mx-auto max-w-7xl px-3 pb-7 pt-4 md:grid md:grid-cols-[1.08fr_0.92fr] md:items-center md:gap-10 md:px-6 md:py-24 lg:grid-cols-[1.1fr_1fr] lg:gap-16">
         <div className="md:space-y-7">
           <span className="hidden items-center gap-1 rounded-full border border-border bg-card/70 px-2 py-1 text-[8px] font-medium leading-tight text-foreground/80 backdrop-blur md:inline-flex md:gap-2 md:px-4 md:py-1.5 md:text-xs">
             <Sparkles className="h-2.5 w-2.5 shrink-0 text-primary md:h-3.5 md:w-3.5" />
@@ -77,9 +81,9 @@ export function Hero() {
             <span className="italic text-gradient-gold">от Изабеллы</span>
           </h1>
 
-          <div className="mt-4 grid grid-cols-[0.88fr_1.12fr] items-stretch gap-2 md:mt-0 md:block">
-            <div className="flex min-h-[15.25rem] flex-col gap-4 md:block md:min-h-0 md:space-y-7">
-              <p className="max-w-xl text-[10px] leading-snug text-muted-foreground md:text-lg md:leading-relaxed">
+          <div className="mt-5 grid grid-cols-[0.78fr_1.22fr] items-stretch gap-2 md:mt-0 md:block">
+            <div className="flex h-full min-h-[17.75rem] flex-col gap-5 md:block md:min-h-0 md:space-y-7">
+              <p className="max-w-xl pt-1 text-[10px] leading-snug text-muted-foreground md:pt-0 md:text-lg md:leading-relaxed">
                 <span className="block">
                   Привет, я Изабелла - мастер маникюра в Смоленске 💖
                 </span>

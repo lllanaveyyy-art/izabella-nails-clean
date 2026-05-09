@@ -668,7 +668,7 @@ export function Booking() {
               </h3>
             </div>
 
-            <div className="flex-1 overflow-y-auto pb-[calc(env(safe-area-inset-bottom)+1.25rem)] md:h-auto md:max-h-[calc(90vh-120px)] md:pb-0">
+            <div className="flex-1 overflow-y-auto bg-card md:h-auto md:max-h-[calc(90vh-120px)]">
 
             {message ? (
               <div className="mx-4 mt-4 rounded-2xl border border-primary/20 bg-rose-soft px-4 py-3 text-sm text-foreground md:mx-8 md:mt-6">
@@ -719,7 +719,7 @@ export function Booking() {
 
             {step === 1 ? (
               <div className="p-3 pb-0 md:p-8">
-                <div className="grid gap-2 pb-36 sm:grid-cols-2 md:pb-0 lg:grid-cols-3">
+                <div className="grid gap-2 pb-[calc(env(safe-area-inset-bottom)+9rem)] sm:grid-cols-2 md:pb-0 lg:grid-cols-3">
                   {serviceOptions.map((option) => {
                     const active = option.id === serviceId;
                     return (
@@ -755,7 +755,7 @@ export function Booking() {
                   })}
                 </div>
 
-                <div className="sticky bottom-0 z-20 -mx-3 mt-3 flex justify-end border-t border-border/70 bg-card px-3 pb-[calc(env(safe-area-inset-bottom)+1.25rem)] pt-2 shadow-[0_-12px_24px_rgba(255,255,255,0.96)] backdrop-blur md:static md:mx-0 md:mt-6 md:border-0 md:bg-transparent md:p-0">
+                <div className="sticky bottom-0 z-30 -mx-3 mt-3 flex justify-end border-t border-border/70 bg-card px-3 pb-[calc(env(safe-area-inset-bottom)+1rem)] pt-3 shadow-[0_-16px_28px_rgba(255,255,255,1)] md:static md:mx-0 md:mt-6 md:border-0 md:bg-transparent md:p-0 md:shadow-none">
                   <button
                     type="button"
                     onClick={openDateTimeStep}
