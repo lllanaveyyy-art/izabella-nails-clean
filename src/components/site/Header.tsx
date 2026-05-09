@@ -20,7 +20,7 @@ export function Header() {
           <a href="#portfolio" className="hover:text-primary transition-colors">Работы</a>
           <a href="#reviews" className="hover:text-primary transition-colors">Отзывы</a>
           <a href="#about" className="hover:text-primary transition-colors">О мастере</a>
-          <a href="#booking" className="hover:text-primary transition-colors">Контакты</a>
+          <a href="#contacts" className="hover:text-primary transition-colors">Контакты</a>
         </nav>
 
         <div className="flex items-center gap-2">

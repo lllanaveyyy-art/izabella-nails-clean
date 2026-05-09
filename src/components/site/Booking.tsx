@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import { Send, CalendarCheck, Check, X, ChevronLeft, Loader2, MapPin } from "lucide-react";
+import { Send, CalendarCheck, Check, X, ChevronLeft, Loader2 } from "lucide-react";
 import { brand } from "@/data/brand";
 import { trackGoal } from "@/components/YandexMetrika";
 
@@ -588,12 +588,7 @@ export function Booking() {
               </a>
             </div>
 
-            <div className="inline-flex items-center gap-2 text-sm text-muted-foreground">
-              <MapPin className="h-4 w-4 text-primary" />
-              {brand.city}, {brand.address}
-            </div>
-
-            <div className="mt-4 overflow-hidden rounded-[1.5rem] border border-border bg-background text-left shadow-card md:mt-10">
+            <div id="contacts" className="mt-4 overflow-hidden rounded-[1.5rem] border border-border bg-background text-left shadow-card md:mt-10">
               <div className="border-b border-border/70 px-4 py-3 md:px-6 md:py-5">
                 <div className="text-sm font-semibold text-foreground">Как добраться</div>
                 <div className="text-sm text-muted-foreground mt-1">Смоленск, ул. 25 Сентября, 16</div>

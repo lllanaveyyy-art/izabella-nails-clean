@@ -53,13 +53,6 @@ export function Footer() {
                 <span className="font-bold text-xs">VK</span> vk.ru/nytiiiii
               </a>
             </li>
-            <li>
-              <a href={brand.bookingUrl}
-                 data-cta="booking"
-                 className="inline-flex items-center gap-2 hover:text-background transition-colors">
-                Онлайн-запись
-              </a>
-            </li>
           </ul>
 
           <a href={brand.bookingUrl}

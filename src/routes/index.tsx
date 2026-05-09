@@ -13,14 +13,14 @@ import { Footer } from "@/components/site/Footer";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Izabella Nails — маникюр в Смоленске на ул. 25 Сентября" },
+      { title: "Izabella Nails - маникюр в Смоленске на ул. 25 Сентября" },
       {
         name: "description",
         content:
           "Маникюр в Смоленске у Изабеллы: гель-лак, укрепление, наращивание и дизайн ногтей. Адрес: ул. 25 Сентября, 16. Онлайн-запись на удобное время.",
       },
       { name: "robots", content: "index,follow" },
-      { property: "og:title", content: "Izabella Nails — маникюр в Смоленске на ул. 25 Сентября" },
+      { property: "og:title", content: "Izabella Nails - маникюр в Смоленске на ул. 25 Сентября" },
       {
         property: "og:description",
         content:
