@@ -40,11 +40,11 @@ function Index() {
       <Header />
       <main>
         <Hero />
-        <Benefits />
-        <Services />
         <Portfolio />
-        <Reviews />
+        <Services />
         <About />
+        <Benefits />
+        <Reviews />
         <Booking />
       </main>
       <Footer />

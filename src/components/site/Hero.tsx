@@ -84,15 +84,12 @@ export function Hero() {
           <div className="mt-5 grid grid-cols-[0.78fr_1.22fr] items-stretch gap-2 md:mt-0 md:block">
             <div className="flex h-full min-h-[17.75rem] flex-col gap-5 md:block md:min-h-0 md:space-y-7">
               <p className="max-w-xl pt-1 text-[10px] leading-snug text-muted-foreground md:pt-0 md:text-lg md:leading-relaxed">
-                <span className="block">
-                  Привет, я Изабелла - мастер маникюра в Смоленске 💖
+                <span className="block">Маникюр в Смоленске.</span>
+                <span className="mt-2 block">
+                  Аккуратный маникюр, покрытие и дизайн.
                 </span>
                 <span className="mt-2 block">
-                  Делаю аккуратный маникюр, ровную форму и красивые дизайны - от
-                  нюда до ярких акцентов.
-                </span>
-                <span className="mt-2 block">
-                  Работаю стерильно и на качественных материалах.
+                  Стерильно, удобно, онлайн-запись.
                 </span>
               </p>
 
