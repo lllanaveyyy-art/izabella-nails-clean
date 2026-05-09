@@ -734,21 +734,23 @@ export function Booking() {
                         }`}
                       >
                         <div className="flex items-start justify-between gap-3">
-                          <div>
+                          <div className="min-w-0 flex-1">
                             <div className="font-medium text-foreground leading-snug">{option.title}</div>
                             <div className="mt-1 overflow-hidden text-xs leading-snug text-muted-foreground [display:-webkit-box] [-webkit-box-orient:vertical] [-webkit-line-clamp:2] md:hidden">
                               {option.description}
                             </div>
+                            <div className="mt-2 flex flex-wrap items-center gap-1.5">
+                              <span className="rounded-full border border-border bg-card px-2 py-0.5 text-xs text-muted-foreground">
+                                {option.duration}
+                              </span>
+                              <span className="rounded-full border border-primary/15 bg-rose-soft/70 px-2 py-0.5 font-display text-sm text-foreground md:text-base">
+                                {option.price}
+                              </span>
+                            </div>
                           </div>
-                          {active ? <Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" /> : null}
-                        </div>
-                        <div className="mt-2 flex flex-wrap items-center gap-1.5">
-                          <span className="rounded-full border border-border bg-card px-2 py-0.5 text-xs text-muted-foreground">
-                            {option.duration}
-                          </span>
-                          <span className="rounded-full border border-primary/15 bg-rose-soft/70 px-2 py-0.5 font-display text-sm text-foreground md:text-base">
-                            {option.price}
-                          </span>
+                          <div className="flex w-5 shrink-0 justify-center pt-0.5">
+                            {active ? <Check className="h-4 w-4 text-primary" /> : null}
+                          </div>
                         </div>
                       </button>
                     );

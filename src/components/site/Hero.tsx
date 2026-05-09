@@ -4,7 +4,7 @@ import { brand } from "@/data/brand";
 
 export function Hero() {
   const visual = (
-    <div className="relative mx-auto w-full max-w-[17rem] md:max-w-[22rem] lg:max-w-[25rem] xl:max-w-[27rem]">
+    <div className="relative mx-auto w-full max-w-[17rem] overflow-visible md:max-w-[22rem] lg:max-w-[25rem] xl:max-w-[27rem]">
       <div className="relative aspect-[4/5] overflow-hidden rounded-[1.75rem] shadow-elegant md:rotate-2 md:rounded-[2rem]">
         <img
           src={heroImg}
@@ -13,32 +13,32 @@ export function Hero() {
           height={1920}
           className="h-full w-full object-cover"
         />
+      </div>
 
-        <div className="absolute right-2 top-2 flex items-center gap-2 rounded-2xl border border-white/70 bg-card/95 px-3 py-2 shadow-card backdrop-blur md:right-4 md:top-4 md:px-4 md:py-3">
-          <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-gradient-rose md:h-8 md:w-8">
-            <Sparkles className="h-3 w-3 text-primary md:h-4 md:w-4" />
+      <div className="absolute -right-3 top-3 flex items-center gap-2 rounded-2xl border border-white/70 bg-card/95 px-3 py-2 shadow-card backdrop-blur md:-right-6 md:top-5 md:px-4 md:py-3">
+        <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-gradient-rose md:h-8 md:w-8">
+          <Sparkles className="h-3 w-3 text-primary md:h-4 md:w-4" />
+        </div>
+        <div>
+          <div className="text-[8px] font-medium uppercase tracking-[0.2em] text-muted-foreground md:text-[10px]">
+            ДИЗАЙНЫ
           </div>
-          <div>
-            <div className="text-[8px] uppercase tracking-[0.18em] text-muted-foreground md:text-[10px]">
-              дизайны
-            </div>
-            <div className="text-[10px] font-semibold leading-tight text-foreground md:text-sm">
-              трендовые идеи
-            </div>
+          <div className="text-[11px] font-semibold leading-tight text-foreground md:text-sm">
+            Трендовые идеи
           </div>
         </div>
+      </div>
 
-        <div className="absolute bottom-2 left-2 flex items-center gap-2 rounded-2xl border border-white/70 bg-card/95 px-3 py-2 shadow-card backdrop-blur md:bottom-4 md:left-4 md:px-4 md:py-3">
-          <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-gradient-rose md:h-8 md:w-8">
-            <Sparkles className="h-3 w-3 text-primary md:h-4 md:w-4" />
+      <div className="absolute -bottom-3 -left-3 flex items-center gap-2 rounded-2xl border border-white/70 bg-card/95 px-3 py-2 shadow-card backdrop-blur md:-bottom-5 md:-left-6 md:px-4 md:py-3">
+        <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-gradient-rose md:h-8 md:w-8">
+          <Sparkles className="h-3 w-3 text-primary md:h-4 md:w-4" />
+        </div>
+        <div>
+          <div className="text-[8px] font-medium uppercase tracking-[0.2em] text-muted-foreground md:text-[10px]">
+            STYLE
           </div>
-          <div>
-            <div className="text-[8px] uppercase tracking-[0.18em] text-muted-foreground md:text-[10px]">
-              style
-            </div>
-            <div className="text-[10px] font-semibold leading-tight text-foreground md:text-sm">
-              clean girl nails
-            </div>
+          <div className="text-[11px] font-semibold leading-tight text-foreground md:text-sm">
+            Clean Girl Nails
           </div>
         </div>
       </div>
@@ -63,7 +63,7 @@ export function Hero() {
 
           <div className="mt-4 h-px w-12 bg-gold md:mt-7 md:w-20" />
 
-          <p className="mt-4 max-w-xl text-[12px] font-medium leading-snug text-foreground/75 md:mt-7 md:text-xl md:leading-relaxed">
+          <p className="mt-4 max-w-xl text-[13px] leading-relaxed text-foreground/80 md:mt-7 md:text-xl md:leading-relaxed">
             Аккуратный маникюр, покрытие и дизайн.
             <br />
             Стерильно. Удобная онлайн-запись.
