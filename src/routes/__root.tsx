@@ -1,7 +1,6 @@
 import { Outlet, Link, createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
 
 import appCss from "../styles.css?url";
-import favicon from "../assets/favicon.svg?url";
 
 function NotFoundComponent() {
   return (
@@ -67,7 +66,12 @@ export const Route = createRootRoute({
       },
       {
         rel: "icon",
-        href: favicon,
+        href: "/favicon.svg",
+        type: "image/svg+xml",
+      },
+      {
+        rel: "shortcut icon",
+        href: "/favicon.ico",
       },
     ],
   }),
