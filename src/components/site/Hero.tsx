@@ -38,7 +38,7 @@ export function Hero() {
           Запись открыта
         </div>
       </div>
-      <div className="absolute -bottom-7 right-0 flex items-center gap-1 rounded-full border border-border bg-card/95 px-2 py-1 shadow-card backdrop-blur md:hidden">
+      <div className="absolute bottom-1 right-1 flex items-center gap-1 rounded-full border border-border bg-card/95 px-2 py-1 shadow-card backdrop-blur md:hidden">
         <Star className="h-3 w-3 fill-gold text-gold" />
         <span className="text-[11px] font-semibold leading-none text-foreground">
           {brand.rating.toFixed(1)}
@@ -62,7 +62,7 @@ export function Hero() {
 
       <div className="relative mx-auto max-w-7xl px-3 pb-10 pt-4 md:grid md:grid-cols-[1.08fr_0.92fr] md:items-center md:gap-10 md:px-6 md:py-24 lg:grid-cols-[1.1fr_1fr] lg:gap-16">
         <div className="md:space-y-7">
-          <span className="inline-flex items-center gap-1 rounded-full border border-border bg-card/70 px-2 py-1 text-[8px] font-medium leading-tight text-foreground/80 backdrop-blur md:gap-2 md:px-4 md:py-1.5 md:text-xs">
+          <span className="hidden items-center gap-1 rounded-full border border-border bg-card/70 px-2 py-1 text-[8px] font-medium leading-tight text-foreground/80 backdrop-blur md:inline-flex md:gap-2 md:px-4 md:py-1.5 md:text-xs">
             <Sparkles className="h-2.5 w-2.5 shrink-0 text-primary md:h-3.5 md:w-3.5" />
             <span>
               <span className="block md:inline">Маникюр в Смоленске</span>
@@ -71,14 +71,14 @@ export function Hero() {
             </span>
           </span>
 
-          <h1 className="mt-2 font-display text-[2rem] leading-[0.98] text-foreground md:mt-0 md:text-5xl lg:text-6xl">
+          <h1 className="font-display text-[2rem] leading-[0.98] text-foreground md:mt-0 md:text-5xl lg:text-6xl">
             Чистый маникюр <br />
             и трендовые дизайны <br />
             <span className="italic text-gradient-gold">от Изабеллы</span>
           </h1>
 
-          <div className="mt-4 grid grid-cols-[0.88fr_1.12fr] items-start gap-2 md:mt-0 md:block">
-            <div className="space-y-4 md:space-y-7">
+          <div className="mt-4 grid grid-cols-[0.88fr_1.12fr] items-stretch gap-2 md:mt-0 md:block">
+            <div className="flex min-h-[15.25rem] flex-col gap-4 md:block md:min-h-0 md:space-y-7">
               <p className="max-w-xl text-[10px] leading-snug text-muted-foreground md:text-lg md:leading-relaxed">
                 <span className="block">
                   Привет, я Изабелла - мастер маникюра в Смоленске 💖
@@ -92,7 +92,7 @@ export function Hero() {
                 </span>
               </p>
 
-              <div className="flex flex-col items-start gap-1 md:flex-row md:flex-wrap md:items-center md:gap-3">
+              <div className="mt-auto flex flex-col items-start gap-1 md:mt-0 md:flex-row md:flex-wrap md:items-center md:gap-3">
                 <a
                   href={brand.bookingUrl}
                   data-cta="booking"

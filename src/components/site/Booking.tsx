@@ -10,7 +10,7 @@ const serviceOptions = [
     title: "Классический маникюр",
     price: "400 ₽",
     duration: "30 мин.",
-    description: "Обработка кутикулы и аккуратная форма без покрытия.",
+    description: "Аккуратная обработка кутикулы и придание формы. База для ухоженных рук без покрытия.",
   },
   {
     id: "men",
@@ -18,7 +18,7 @@ const serviceOptions = [
     title: "Мужской маникюр",
     price: "500 ₽",
     duration: "30 мин.",
-    description: "Чистая кутикула, форма и лёгкая полировка.",
+    description: "Уход за мужскими руками: чистая кутикула, аккуратная форма, лёгкая полировка.",
   },
   {
     id: "gel",
@@ -26,7 +26,7 @@ const serviceOptions = [
     title: "Маникюр с покрытием гель-лаком",
     price: "850 ₽",
     duration: "1 ч 30 мин.",
-    description: "Маникюр и стойкое покрытие с глянцевым блеском.",
+    description: "Маникюр + стойкое покрытие гель-лаком. Глянцевый блеск, который держится до 3-4 недель.",
   },
   {
     id: "strengthening",
@@ -34,7 +34,7 @@ const serviceOptions = [
     title: "Укрепление гелем",
     price: "1 100 ₽",
     duration: "1 ч 15 мин.",
-    description: "Дополнительная прочность для натуральных ногтей.",
+    description: "Укрепление натуральных ногтей биогелем - для прочности, длины и красивой формы.",
   },
   {
     id: "correction",
@@ -42,7 +42,7 @@ const serviceOptions = [
     title: "Коррекция наращённых ногтей",
     price: "1 300 ₽",
     duration: "1 ч 30 мин.",
-    description: "Обновление формы и покрытия на наращённых ногтях.",
+    description: "Поддержание формы и обновление покрытия на наращённых ногтях каждые 3-4 недели.",
   },
   {
     id: "extension",
@@ -50,7 +50,7 @@ const serviceOptions = [
     title: "Наращивание ногтей",
     price: "1 500 ₽",
     duration: "2 ч 30 мин.",
-    description: "Нужная длина и форма с прочным основанием.",
+    description: "Наращивание любой длины и формы. Прочное основание под трендовые дизайны.",
   },
 ] as const;
 
@@ -668,7 +668,7 @@ export function Booking() {
               </h3>
             </div>
 
-            <div className="flex-1 overflow-y-auto pb-[calc(env(safe-area-inset-bottom)+1rem)] md:h-auto md:max-h-[calc(90vh-120px)] md:pb-0">
+            <div className="flex-1 overflow-y-auto pb-[calc(env(safe-area-inset-bottom)+1.25rem)] md:h-auto md:max-h-[calc(90vh-120px)] md:pb-0">
 
             {message ? (
               <div className="mx-4 mt-4 rounded-2xl border border-primary/20 bg-rose-soft px-4 py-3 text-sm text-foreground md:mx-8 md:mt-6">
@@ -719,7 +719,7 @@ export function Booking() {
 
             {step === 1 ? (
               <div className="p-3 pb-0 md:p-8">
-                <div className="grid gap-2 pb-24 sm:grid-cols-2 md:pb-0 lg:grid-cols-3">
+                <div className="grid gap-2 pb-36 sm:grid-cols-2 md:pb-0 lg:grid-cols-3">
                   {serviceOptions.map((option) => {
                     const active = option.id === serviceId;
                     return (
@@ -736,20 +736,26 @@ export function Booking() {
                         <div className="flex items-start justify-between gap-3">
                           <div>
                             <div className="font-medium text-foreground leading-snug">{option.title}</div>
-                            <div className="mt-1 text-xs leading-snug text-muted-foreground md:text-sm">
+                            <div className="mt-1 overflow-hidden text-xs leading-snug text-muted-foreground [display:-webkit-box] [-webkit-box-orient:vertical] [-webkit-line-clamp:2] md:text-sm">
                               {option.description}
                             </div>
-                            <div className="mt-1 text-xs text-muted-foreground md:text-sm">{option.duration}</div>
                           </div>
-                          {active ? <Check className="mt-0.5 h-4 w-4 text-primary" /> : null}
+                          {active ? <Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" /> : null}
                         </div>
-                        <div className="mt-1.5 font-display text-base text-foreground md:mt-3 md:text-xl">{option.price}</div>
+                        <div className="mt-2 flex flex-wrap items-center gap-1.5">
+                          <span className="rounded-full border border-border bg-card px-2 py-0.5 text-xs text-muted-foreground">
+                            {option.duration}
+                          </span>
+                          <span className="rounded-full border border-primary/15 bg-rose-soft/70 px-2 py-0.5 font-display text-sm text-foreground md:text-base">
+                            {option.price}
+                          </span>
+                        </div>
                       </button>
                     );
                   })}
                 </div>
 
-                <div className="sticky bottom-0 -mx-3 mt-3 flex justify-end border-t border-border/70 bg-card px-3 pb-[calc(env(safe-area-inset-bottom)+1rem)] pt-2 backdrop-blur md:static md:mx-0 md:mt-6 md:border-0 md:bg-transparent md:p-0">
+                <div className="sticky bottom-0 z-20 -mx-3 mt-3 flex justify-end border-t border-border/70 bg-card px-3 pb-[calc(env(safe-area-inset-bottom)+1.25rem)] pt-2 shadow-[0_-12px_24px_rgba(255,255,255,0.96)] backdrop-blur md:static md:mx-0 md:mt-6 md:border-0 md:bg-transparent md:p-0">
                   <button
                     type="button"
                     onClick={openDateTimeStep}
