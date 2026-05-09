@@ -96,10 +96,6 @@ export function Portfolio() {
                   loading="lazy"
                   className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
-                <div className={`absolute inset-0 bg-gradient-to-t from-foreground/70 via-foreground/10 to-transparent hidden md:block`} />
-                <div className={`absolute inset-x-0 bottom-0 p-2 text-left text-card hidden md:block md:p-3`}>
-                  <div className="text-xs font-medium leading-snug md:text-sm">{w.caption}</div>
-                </div>
               </button>
             ))}
           </div>
@@ -126,19 +122,23 @@ export function Portfolio() {
             onClick={() => setActiveIndex(null)}
           >
             <div
-              className="relative w-full max-w-4xl overflow-hidden rounded-3xl bg-background shadow-elegant"
+              className="relative flex max-w-[92vw] flex-col items-center"
               onClick={(e) => e.stopPropagation()}
             >
               <button
                 type="button"
                 onClick={() => setActiveIndex(null)}
-                className="absolute right-4 top-4 z-10 inline-flex h-10 w-10 items-center justify-center rounded-full bg-black/60 text-white transition hover:bg-black/80"
+                className="absolute right-2 top-2 z-10 inline-flex h-10 w-10 items-center justify-center rounded-full bg-background/90 text-foreground shadow-card transition hover:bg-background"
                 aria-label="Закрыть фото"
               >
                 ×
               </button>
-              <img src={activeWork.src} alt={activeWork.alt} className="max-h-[85vh] w-full object-contain bg-black" />
-              <div className="px-6 py-4 text-center">
+              <img
+                src={activeWork.src}
+                alt={activeWork.alt}
+                className="max-h-[82vh] max-w-[92vw] rounded-2xl object-contain shadow-elegant"
+              />
+              <div className="mt-3 max-w-full rounded-full bg-background px-4 py-2 text-center shadow-card">
                 <div className="text-sm font-medium text-foreground">{activeWork.caption}</div>
               </div>
             </div>
