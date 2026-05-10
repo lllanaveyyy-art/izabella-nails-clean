@@ -13,7 +13,7 @@ export function Services() {
           <h2 className="mt-2 mb-3 font-display text-xl md:mt-3 md:mb-4 md:text-5xl">
             Прайс-лист <span className="italic text-gradient-gold">студии</span>
           </h2>
-          <p className="text-muted-foreground leading-relaxed">
+          <p className="hidden text-muted-foreground leading-relaxed md:block">
             Полный спектр услуг - от классического ухода до наращивания и
             трендовых дизайнов. Все цены окончательные, без скрытых доплат.
           </p>

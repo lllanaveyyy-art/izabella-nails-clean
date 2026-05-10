@@ -29,11 +29,11 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Izabella Nails - маникюр в Смоленске на ул. 25 Сентября" },
+      { title: "Маникюр в Смоленске недорого - Izabella Nails" },
       {
         name: "description",
         content:
-          "Маникюр в Смоленске у Изабеллы: гель-лак, укрепление, наращивание и дизайн ногтей. Адрес: ул. 25 Сентября, 16. Онлайн-запись на удобное время.",
+          "Недорогой маникюр, гель-лак, укрепление и наращивание ногтей в Промышленном районе Смоленска. Ул. 25 Сентября, рядом с Медгородком.",
       },
       { name: "robots", content: "index,follow" },
       { name: "referrer", content: "strict-origin-when-cross-origin" },
@@ -42,20 +42,26 @@ export const Route = createRootRoute({
         content:
           "default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; connect-src 'self' https:; font-src 'self' data:; frame-src https://yandex.ru https://*.yandex.ru; base-uri 'self'; form-action 'self'; object-src 'none'",
       },
-      { property: "og:title", content: "Izabella Nails - маникюр в Смоленске на ул. 25 Сентября" },
+      { property: "og:title", content: "Маникюр в Смоленске недорого - Izabella Nails" },
       {
         property: "og:description",
         content:
-          "Маникюр в Смоленске у Изабеллы: гель-лак, укрепление, наращивание и дизайн ногтей. Адрес: ул. 25 Сентября, 16. Онлайн-запись на удобное время.",
+          "Недорогой маникюр, гель-лак, укрепление и наращивание ногтей в Промышленном районе Смоленска. Ул. 25 Сентября, рядом с Медгородком.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://izabellanails.vercel.app/" },
+      { property: "og:image", content: "https://izabellanails.vercel.app/favicon.svg" },
+      { property: "og:image:alt", content: "Izabella Nails" },
       { name: "twitter:card", content: "summary" },
-      { name: "twitter:title", content: "Izabella Nails - маникюр в Смоленске на ул. 25 Сентября" },
+      { name: "twitter:title", content: "Маникюр в Смоленске недорого - Izabella Nails" },
       {
         name: "twitter:description",
         content:
-          "Маникюр в Смоленске: покрытие гель-лаком, укрепление, наращивание и дизайн ногтей. Izabella Nails, ул. 25 Сентября, 16.",
+          "Недорогой маникюр, гель-лак, укрепление и наращивание ногтей в Промышленном районе Смоленска. Ул. 25 Сентября, рядом с Медгородком.",
+      },
+      {
+        name: "twitter:image",
+        content: "https://izabellanails.vercel.app/favicon.svg",
       },
     ],
     links: [
@@ -68,6 +74,10 @@ export const Route = createRootRoute({
         rel: "icon",
         href: "/favicon.svg",
         type: "image/svg+xml",
+      },
+      {
+        rel: "apple-touch-icon",
+        href: "/favicon.svg",
       },
       {
         rel: "shortcut icon",
