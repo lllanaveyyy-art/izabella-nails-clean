@@ -751,17 +751,6 @@ export function Booking() {
                           <div className="flex w-5 shrink-0 justify-center pt-0.5">
                             {active ? <Check className="h-4 w-4 text-primary" /> : null}
                           </div>
-                          <div className="flex w-[4.75rem] shrink-0 flex-col items-end gap-1">
-                            <span className="rounded-full border border-border bg-card px-1.5 py-0.5 text-[10px] leading-none text-muted-foreground">
-                              {option.duration}
-                            </span>
-                            <span className="rounded-full border border-primary/15 bg-rose-soft/70 px-1.5 py-0.5 font-display text-[13px] leading-none text-foreground">
-                              {option.price}
-                            </span>
-                            <span className="flex h-4 w-4 items-center justify-center">
-                              {active ? <Check className="h-4 w-4 text-primary" /> : null}
-                            </span>
-                          </div>
                         </div>
                       </button>
                     );
