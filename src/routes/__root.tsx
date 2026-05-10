@@ -50,7 +50,7 @@ export const Route = createRootRoute({
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://izabellanails.vercel.app/" },
-      { property: "og:image", content: "https://izabellanails.vercel.app/favicon.svg" },
+      { property: "og:image", content: "https://izabellanails.vercel.app/og-image.png" },
       { property: "og:image:alt", content: "Izabella Nails" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:title", content: "Маникюр в Смоленске недорого - Izabella Nails" },
@@ -61,7 +61,7 @@ export const Route = createRootRoute({
       },
       {
         name: "twitter:image",
-        content: "https://izabellanails.vercel.app/favicon.svg",
+        content: "https://izabellanails.vercel.app/og-image.png",
       },
     ],
     links: [
@@ -77,7 +77,7 @@ export const Route = createRootRoute({
       },
       {
         rel: "apple-touch-icon",
-        href: "/favicon.svg",
+        href: "/apple-touch-icon.png",
       },
       {
         rel: "shortcut icon",
