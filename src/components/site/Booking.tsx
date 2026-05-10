@@ -719,7 +719,7 @@ export function Booking() {
 
             {step === 1 ? (
               <div className="p-3 pb-0 md:p-8">
-                <div className="grid gap-2 pb-[calc(env(safe-area-inset-bottom)+9rem)] sm:grid-cols-2 md:pb-0 lg:grid-cols-2">
+                <div className="grid gap-2 pb-[calc(env(safe-area-inset-bottom)+9rem)] sm:grid-cols-2 md:pb-0 lg:grid-cols-3">
                   {serviceOptions.map((option) => {
                     const active = option.id === serviceId;
                     return (

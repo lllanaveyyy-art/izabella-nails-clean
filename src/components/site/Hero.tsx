@@ -4,7 +4,7 @@ import { brand } from "@/data/brand";
 
 export function Hero() {
   const visual = (
-    <div className="relative mx-auto w-full max-w-[9.5rem] overflow-visible md:max-w-[22rem] lg:max-w-[25rem] xl:max-w-[27rem]">
+    <div className="relative mx-auto w-full max-w-[12rem] overflow-visible md:max-w-[22rem] lg:max-w-[25rem] xl:max-w-[27rem]">
       <div className="relative aspect-[4/5] overflow-hidden rounded-[1.75rem] shadow-elegant md:rotate-2 md:rounded-[2rem]">
         <img
           src={heroImg}
@@ -55,37 +55,37 @@ export function Hero() {
         }}
       />
 
-      <div className="relative mx-auto grid max-w-7xl grid-cols-[0.88fr_1.12fr] items-center gap-2 px-3 pb-8 pt-6 md:grid-cols-[1.08fr_0.92fr] md:gap-10 md:px-6 md:py-24 lg:grid-cols-[1.1fr_1fr] lg:gap-16">
+      <div className="relative mx-auto grid max-w-7xl grid-cols-[0.95fr_1.05fr] items-center gap-3 px-4 pb-9 pt-7 md:grid-cols-[1.08fr_0.92fr] md:gap-10 md:px-6 md:py-24 lg:grid-cols-[1.1fr_1fr] lg:gap-16">
         <div className="flex flex-col items-start">
-          <h1 className="font-display text-[2.35rem] leading-[0.95] text-foreground md:text-7xl lg:text-8xl">
+          <h1 className="font-display text-[2.05rem] leading-[1.02] text-foreground md:text-7xl md:leading-[0.95] lg:text-8xl">
             Маникюр <br />в Смоленске
           </h1>
 
           <div className="mt-3 h-px w-10 bg-gold md:mt-7 md:w-20" />
 
-          <p className="mt-3 max-w-xl text-[11px] leading-snug text-foreground/80 md:mt-7 md:text-xl md:leading-relaxed">
+          <p className="mt-3 max-w-xl text-[13px] leading-relaxed text-foreground/80 md:mt-7 md:text-xl md:leading-relaxed">
             Аккуратный маникюр, покрытие и дизайн.
             <br />
             Стерильно. Удобная онлайн-запись.
           </p>
 
-          <div className="mt-4 flex flex-col items-start gap-1.5 md:mt-8 md:flex-row md:flex-wrap md:items-center md:gap-4">
+          <div className="mt-4 flex flex-row flex-wrap items-center gap-2 md:mt-8 md:gap-4">
             <a
               href={brand.bookingUrl}
               data-cta="booking"
-              className="inline-flex items-center justify-center rounded-full bg-primary px-3 py-1.5 text-[10px] font-medium text-primary-foreground shadow-elegant transition-opacity hover:opacity-90 md:px-8 md:py-4 md:text-sm"
+              className="inline-flex items-center justify-center rounded-full bg-primary px-4 py-2 text-[11px] font-medium text-primary-foreground shadow-elegant transition-opacity hover:opacity-90 md:px-8 md:py-4 md:text-sm"
             >
               Записаться онлайн
             </a>
             <a
               href="#services"
-              className="inline-flex items-center justify-center rounded-full border border-foreground/25 bg-card/35 px-3 py-1.5 text-[10px] font-medium text-foreground backdrop-blur transition-colors hover:bg-card md:px-8 md:py-4 md:text-sm"
+              className="inline-flex items-center justify-center rounded-full border border-foreground/25 bg-card/35 px-4 py-2 text-[11px] font-medium text-foreground backdrop-blur transition-colors hover:bg-card md:px-8 md:py-4 md:text-sm"
             >
               Услуги и цены
             </a>
           </div>
 
-          <div className="mt-4 flex items-start gap-1.5 text-[9px] font-medium leading-snug text-foreground/75 md:hidden">
+          <div className="mt-5 flex flex-wrap items-center gap-x-2.5 gap-y-1 text-[11px] font-medium leading-snug text-foreground/75 md:hidden">
             <span className="shrink-0">{brand.rating.toFixed(1)} ⭐</span>
             <span className="shrink-0 text-foreground/25">|</span>
             <span className="shrink-0">{brand.reviewsCount} отзывов</span>
