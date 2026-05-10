@@ -60,8 +60,8 @@ export const services: Service[] = [
   {
     id: "correction",
     name: "Коррекция наращённых ногтей",
-    duration: "1 ч 15 мин.",
-    durationMinutes: 75,
+    duration: "1 ч 30 мин.",
+    durationMinutes: 90,
     price: "1 300 ₽",
     priceFrom: false,
     description:
@@ -71,8 +71,8 @@ export const services: Service[] = [
   {
     id: "extension",
     name: "Наращивание ногтей",
-    duration: "2 ч",
-    durationMinutes: 120,
+    duration: "2 ч 30 мин.",
+    durationMinutes: 150,
     price: "1 500 ₽",
     priceFrom: false,
     description:
