@@ -6,8 +6,8 @@ export default async function handler(req, res) {
     const body = parseBody(req);
     const { session = '', serviceId = '', datetime = '', firstName = '', lastName = '', phone = '', comment = '' } = body;
 
-    if (!session || !serviceId || !datetime || !firstName || !phone) {
-      return json(res, 400, { error: 'session, serviceId, datetime, firstName, phone are required' });
+    if (!serviceId || !datetime || !firstName || !phone) {
+      return json(res, 400, { error: 'serviceId, datetime, firstName, phone are required' });
     }
 
     await clearReservation(session);

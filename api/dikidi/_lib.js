@@ -89,7 +89,7 @@ async function fetchJsonFromDikidi(url, params, { method = "GET", body } = {}) {
         ? new URLSearchParams(
             Object.entries(body || {}).flatMap(([key, value]) => {
               if (Array.isArray(value)) return value.map((item) => [key, String(item)]);
-              if (value === undefined || value === null) return [];
+              if (value === undefined || value === null || value === "") return [];
               return [[key, String(value)]];
             }),
           ).toString()

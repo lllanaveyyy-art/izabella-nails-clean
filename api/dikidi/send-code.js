@@ -6,8 +6,8 @@ export default async function handler(req, res) {
     const body = parseBody(req);
     const { session = '', firstName = '', lastName = '', phone = '' } = body;
 
-    if (!session || !firstName || !phone) {
-      return json(res, 400, { error: 'session, firstName, phone are required' });
+    if (!firstName || !phone) {
+      return json(res, 400, { error: 'firstName, phone are required' });
     }
 
     await sendCode(session, { firstName, lastName, phone });

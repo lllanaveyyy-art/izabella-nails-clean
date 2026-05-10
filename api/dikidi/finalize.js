@@ -6,8 +6,8 @@ export default async function handler(req, res) {
     const body = parseBody(req);
     const { session = '', firstName = '', lastName = '', phone = '', comment = '', code = '', action = '' } = body;
 
-    if (!session || !firstName || !phone) {
-      return json(res, 400, { error: 'session, firstName, phone are required' });
+    if (!firstName || !phone) {
+      return json(res, 400, { error: 'firstName, phone are required' });
     }
 
     await finalizeBooking(session, { firstName, lastName, phone, comment, code, action });

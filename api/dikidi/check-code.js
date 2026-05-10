@@ -6,8 +6,8 @@ export default async function handler(req, res) {
     const body = parseBody(req);
     const { session = '', phone = '', code = '' } = body;
 
-    if (!session || !phone || !code) {
-      return json(res, 400, { error: 'session, phone, code are required' });
+    if (!phone || !code) {
+      return json(res, 400, { error: 'phone, code are required' });
     }
 
     const data = await verifyCode(session, { phone, code });
